@@ -39,7 +39,7 @@ const EdicionAnterior = ({imagen, titulo, link}) => {
                 <Titulo>{titulo}</Titulo>
                 <img src={imagen} alt={titulo} />
                 <FooterBoton>
-                    <Boton color={false} texto={'Más info'} destino={link} anchoMobile={'75%'}  />
+                    <Boton color={false} texto={'Más info'} destino={link} anchoMobile={'80%'}  />
                 </FooterBoton>
             </Tarjeta>
         </>

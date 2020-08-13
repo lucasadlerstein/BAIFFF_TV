@@ -28,16 +28,25 @@ const ElTaller = ({titulo, contenido, imagen}) => {
         background-color: #ff0000;
         color: white;
         h3 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             text-align: center;
             line-height: 86px;
-            margin-bottom: 3rem;
+            margin-bottom: .5rem;
             text-transform: uppercase;
         }
         p {
             font-size: 1.8rem;
             line-height: 21px;
             text-align: justify;
+        }
+        @media (min-width: 540px){
+            h3 {
+                margin-bottom: 3rem;
+                font-size: 4rem;
+            }
+            p {
+                font-size: 1.8rem;
+            }
         }
         @media (min-width: 768px){
             width: 50%;

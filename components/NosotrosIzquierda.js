@@ -17,13 +17,17 @@ const ContenedorUno = styled.div`
         text-align: center;
     }
     h3 {
-        font-size: 2.5rem; /* 4.4rem */
+        font-size: 2rem; /* 4.4rem */
         color: black;
         text-transform: uppercase;
-        line-height: 30px;
+        line-height: 20px;
         font-style: normal;
         font-weight: normal;
     }   
+    @media (min-width: 540px){
+        font-size: 2.5rem;
+        line-height: 30px;
+    }
     @media (min-width: 768px){
         padding: 3.5rem 5rem;
         /* padding-left: 0; */
@@ -55,10 +59,13 @@ const ContenedorUno = styled.div`
     
 `;
 const Mini = styled.span`
-        font-size: 3rem!important;
-        position: relative;
-        top: -4px;
-        color: #ff0000!important;
+    font-size: 3rem!important;
+    position: relative;
+    top: -4px;
+    color: #ff0000!important;
+    @media (max-width: 540px){
+        display: none;
+    }
     @media (min-width: 768px){
         font-size: 3rem!important;
         top: 0;

@@ -21,13 +21,17 @@ const PortadaSeccion = ({foto, titulo}) => {
     const Texto = styled.h1`
         color: white;
         font-family: 'MonumentExtended';
-        font-size: 4rem;
+        font-size: 3.5rem;
         text-transform: uppercase;
         position: absolute;
         bottom: 1rem;
         left: 5%;
         right: 5%;
         text-align: center;
+
+        @media (min-width: 540px){
+            font-size: 4rem;
+        }
 
         @media (min-width: 768px){
             top: 23rem;

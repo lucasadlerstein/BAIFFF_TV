@@ -28,7 +28,7 @@ const VideoPortada = () => {
     return ( 
         <ContenedorVideo>
             <video
-                playsinline 
+                playsInline 
                 loop
                 autoPlay
                 muted

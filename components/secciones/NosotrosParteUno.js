@@ -22,12 +22,15 @@ const CartelRojo = styled.p`
     padding: 6rem;
     background-color: #ff0000;
     margin: 0;
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     line-height: 4.8rem;
     text-align: center;
     font-family: 'MonumentExtended';
     text-transform: uppercase;
     color: white;
+    @media (min-width: 540px){
+        font-size: 3.2rem;
+    }
     @media (min-width: 768px){
         font-size: 4rem;
         padding: 5rem 8rem;

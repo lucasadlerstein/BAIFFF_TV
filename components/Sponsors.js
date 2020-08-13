@@ -40,7 +40,7 @@ const Sponsors = () => {
     return ( 
         <>
             <Contenedor>
-                <TituloSeccion texto={'Sponsors y aliados'} />
+                <TituloSeccion tamano={'4.8rem'} tamanoSm={'3rem'} texto={'Sponsors y aliados'} />
                 <Grilla>
                     <ColumnaAfiliado xs={6} sm={6} lg={3}>
                         <Aliado src={'/img/HOME/Home_1.jpg'} alt="Aliado 1" />

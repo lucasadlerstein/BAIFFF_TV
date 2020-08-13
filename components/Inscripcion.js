@@ -84,7 +84,7 @@ const BotonUI = styled.button`
         outline: none;
     }
     @media (max-width: 768px){
-        padding: 1.5rem 8rem;
+        padding: 1.5rem 7rem;
     }
 `;
 const MensajeError = styled.p`

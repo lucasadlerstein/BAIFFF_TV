@@ -8,11 +8,13 @@ const TituloSeccion = ({texto, tamano, tamanoSm, color}) => {
         text-transform: uppercase;
         font-size: ${tamanoSm ? tamanoSm : '3.5rem'};
         padding: ${texto === 'Sponsors y aliados' ? '0 5rem' : '0'};
-        line-height:58px;
         color: ${color ? color : '#ff0000'};
+        line-height: 40px;
         text-align:center;
         @media (min-width: 768px){
-            font-size: ${tamano ? tamano : '4.8rem'};   
+            font-size: ${tamano ? tamano : '4.8rem'};  
+        line-height:58px;
+
         }
     `;
 

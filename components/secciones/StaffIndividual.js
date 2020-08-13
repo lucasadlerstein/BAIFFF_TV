@@ -10,14 +10,23 @@ const DivP = styled.div`
     margin: 4rem auto;
     position: relative;
     h5 {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         line-height: 0;
         border-bottom: 2rem solid #ff0000;
     }
     p {
         font-family: 'MonumentExtended';
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-top: .8rem;
+    }
+    @media (min-width: 540px){
+        margin: 4rem auto;
+        h5 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.8rem;
+        }
     }
 
     @media (min-width: 768px){

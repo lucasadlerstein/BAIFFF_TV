@@ -82,11 +82,18 @@ const Lista = styled.ul`
         word-wrap: break-word;
     }
     li::before {
-        content: '▪';
-        color: #ff0000!important;
-        font-size: 5rem;
+        display: block;
+        content: '';
+        margin-top: .5rem;
+        background-color: #ff0000;
+        background-size: 28px 28px;
+        height: 1.5rem;
+        width: 1.5rem;
         float: left;
         margin-right: 5px;
+        /* color: #ff0000!important; */
+        /* content: '▪'; */
+        /* font-size: 5rem; */
     }
 `;
 const Botones = styled.div`
@@ -118,16 +125,22 @@ const Derecha = styled.div`
 const Cartel = styled.h4`
     color: white;
     background-color: #ff0000;
-    font-size: 4.2rem;
+    font-size: 4rem;
     text-align:center;
     line-height: 50px;
     text-transform: uppercase;
     padding: 4rem 3rem 4rem calc(3rem + 15px);
     margin: 0;
     span {
-        font-size: 2rem;
+        font-size: 1.95rem;
         display: block;
         line-height: 1.2;
+    }
+    @media (min-width: 540px){
+        font-size: 4.2rem;
+        span {
+            font-size: 2rem;
+        }
     }
     @media (min-width: 768px){
         span {
