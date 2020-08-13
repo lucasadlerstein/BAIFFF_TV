@@ -10,7 +10,7 @@ const Izquierda = styled.div`
         color: #FF0000;
         font-family: 'MonumentExtended';
         line-height: 86px;
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
         text-transform: uppercase;
     }
@@ -22,23 +22,46 @@ const Izquierda = styled.div`
         color: black;
         margin-bottom: 2rem;
     }
+    @media (min-width: 400px){
+        h2 {
+            font-size: 3.5rem;
+        }
+    }
+    @media (min-width: 540px){
+        h2 {
+            font-size: 5rem;
+            text-align: left;
+        }
+    }
     @media (min-width: 768px){
         padding: 6rem 5rem;
         max-width: 90%;
-            margin: 0 auto;
-
+        margin: 0 auto;
         h2 {
-            text-align: left;
+            font-size: 6.5rem;
+        }
+    }
+    @media (min-width: 991px){
+        h2 {
             font-size: 5rem;
         }
     }
-    @media (min-width: 1367px){
+    @media (min-width: 1150px){
+        h2 {
+            font-size: 6rem;
+        }
+    }
+    @media (min-width: 1280px){
+        h2 {
+            font-size: 6.5rem;
+        }
+    }
+    @media (min-width: 1395px){
         padding: 6rem 5rem;
         max-width: 85%;
             margin: 0 auto;
-
         h2 {
-            font-size: 7rem;
+            font-size: 7.2rem;
         }
     }
     
@@ -60,7 +83,7 @@ const Lista = styled.ul`
     }
     li::before {
         content: '▪';
-        color: #ff0000;
+        color: #ff0000!important;
         font-size: 5rem;
         float: left;
         margin-right: 5px;
@@ -155,7 +178,7 @@ const RowP = styled(Row)`
 `;
 const ContenidoIzq = styled.div`
     @media (max-width: 768px){
-        width: 90%;
+        width: 85%;
         margin: 0 auto;
     }
 `;

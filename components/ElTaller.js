@@ -71,7 +71,7 @@ const ElTaller = ({titulo, contenido, imagen}) => {
             <Informacion>
                 <h3>{titulo}</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis semper ipsum elementum, diam. Ultrices diam facilisi pretium semper semper nascetur et quis mi. Sem a tincidunt habitant pulvinar ut mattis. Porttitor commodo vel faucibus libero, enim quisque volutpat nisl, placerat. Lectus augue neque, risus felis morbi maecenas. Mattis tortor eu lorem diam. Sed egestas in malesuada pharetra. Ipsum ridiculus semper pharetra eros, nunc sit quis. Pharetra risus morbi auctor integer eget velit, in enim.
+                    {contenido}
                 </p>
             </Informacion>
             <Imagen></Imagen>

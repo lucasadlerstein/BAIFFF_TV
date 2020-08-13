@@ -12,10 +12,16 @@ const ContenedorVideo = styled.div`
 `;
 const Logo = styled.img`
     position: absolute;
-    bottom: 45%;
-    left: 42%;
-    width: 15%;
     z-index:99;
+    left: 40%;
+    right: 5%;
+    width: 8rem;
+    bottom: 35%;
+    @media (min-width: 540px ){
+        bottom: 45%;
+        left: 42%;
+        width: 15%;
+    }
 `;
 
 const VideoPortada = () => {
@@ -25,6 +31,7 @@ const VideoPortada = () => {
                 playsinline 
                 loop
                 autoPlay
+                muted
                 style={{
                     width: '100%',
                     height: '100%',

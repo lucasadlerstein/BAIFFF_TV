@@ -18,25 +18,28 @@ const NavFooter = styled.div`
 const ItemNav = styled.a`
     font-family: 'MonumentExtended';
     text-transform: uppercase;
-    color: #474646;
+    color: #474646!important;
     text-align: center;
     align-items:center;
     font-size: 1.8rem;
     line-height: 22px;
     cursor: pointer;
     margin-bottom: 2rem;
+    text-decoration: none;
 
     &:last-of-type{
         margin-bottom:0;
     }
 
-    
     @media (min-width: 768px){
         margin-right: 4rem;
         margin-bottom: 0;
         &:last-of-type{
             margin-right: 0;
         }
+    }
+    &:hover {
+        text-decoration: none;
     }
 `;
 const Derechos = styled.div`
@@ -70,8 +73,8 @@ const Footer = () => {
                 <Link href="/"><ItemNav>Home</ItemNav></Link>
                 <Link href="/nosotrxs"><ItemNav>Nosotrxs</ItemNav></Link>
                 <Link href="/agenda"><ItemNav>Agenda</ItemNav></Link>
-                <Link href="/ediciones"><ItemNav>Ediciones</ItemNav></Link>
-                <Link href="/terminos"><ItemNav>Términos</ItemNav></Link>
+                <Link href="/nosotrxs#ediciones-anteriores"><ItemNav>Ediciones</ItemNav></Link>
+                <ItemNav target="_blank" rel="noopener noreferrer" href="/terms/BASES_Y_CONDICIONES_BAIFFF2020.pdf">Términos</ItemNav>
             </NavFooter>
             <Derechos>
                 <p>

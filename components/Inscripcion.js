@@ -34,6 +34,27 @@ const TextField = styled.input`
         outline: none;
     }
 `;
+
+const SelectP = styled.select`
+    font-family: 'Raleway';
+    border: none;
+    border-bottom: 1px solid #ff0000;
+    padding: 0 0 0.5rem .1rem;
+    color: #ff0000;
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 21px;
+    margin-bottom: 3rem;
+    
+    &::placeholder {
+        color: #ff0000;
+        opacity: 1;        
+    }
+    &:focus {
+        outline: none;
+    }
+`;
+
 const RowPersonalizada = styled(Row)`
     margin: 3rem auto 2rem auto;
     @media (min-width: 768px){
@@ -112,6 +133,7 @@ const Inscripcion = () => {
     const [ open, setOpen ] = useState(false);
     const [ error, setError ] = useState(null);
     const [ etapa, setEtapa ] = useState(1);
+    const [ publicitario, setPublicitario ] = useState(null);
     const [ formulario, setFormulario ] = useState({
         // Inscribe
         i_nombre: '',
@@ -142,10 +164,22 @@ const Inscripcion = () => {
     });
 
     const handleChange = (e) => {
-        setFormulario({
-            ...formulario,
-            [e.target.name]: e.target.value
-        })
+        if (e.target.name === 'publicitario') {
+            if (e.target.value === 'publicitario') {
+                setPublicitario('publicitario');
+            } else if (e.target.value === 'Artistico') {
+                setFormulario({
+                    ...formulario,
+                    [e.target.name]: e.target.value
+                });
+                setPublicitario(null);
+            }
+        } else {
+            setFormulario({
+                ...formulario,
+                [e.target.name]: e.target.value
+            });
+        }
     }
 
     const onFocusDate = () => { document.querySelector('#nacimientoDirector').type = 'date'; }
@@ -254,7 +288,7 @@ const Inscripcion = () => {
     }
 
     const labelCheckTerminos = <p className="m-0">
-        He leído y acepto los <ATerminos href="/terminos" target="_blank">terminos y condiciones</ATerminos>
+        He leído y acepto los <ATerminos href="/terms/BASES_Y_CONDICIONES_BAIFFF2020.pdf" target="_blank">términos y condiciones.</ATerminos>
     </p>; 
 
     return (
@@ -283,9 +317,18 @@ const Inscripcion = () => {
                                     <Row>
                                         <Col>
                                             <TextField value={formulario.d_nombre} type="text" required placeholder="Nombre y apellido" name="d_nombre" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.d_nacionalidad} type="text" required placeholder="Nacionalidad" name="d_nacionalidad" onChange={(e) => handleChange(e)} />
                                             <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder="Fecha de nacimiento" name="d_nacimiento" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.d_tipo} type="text" required placeholder="Tipo de artista" name="d_tipo" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.d_nacionalidad} type="text" required placeholder="Nacionalidad" name="d_nacionalidad" onChange={(e) => handleChange(e)} />
+                                            <SelectP
+                                                onChange={(e) => handleChange(e)}
+                                                name="d_tipo"
+                                                required
+                                                value={formulario.d_tipo}
+                                            >
+                                            <option selected disabled value="">Tipo de artista</option>
+                                            <option value="Profesional">Profesional</option>
+                                            <option value="Independiente">Independiente</option>
+                                            </SelectP>
                                         </Col>
                                         <Col>
                                             <TextField value={formulario.d_website} type="text" placeholder="Website" name="d_website" onChange={(e) => handleChange(e)} />
@@ -298,8 +341,29 @@ const Inscripcion = () => {
                                     <Row>
                                         <Col>
                                             <TextField value={formulario.nombre} type="text" required placeholder="Nombre del Film" name="nombre" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.tipo} type="text" required placeholder="Tipo de film" name="tipo" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.musica} type="text" required placeholder="Música original" name="musica" onChange={(e) => handleChange(e)} />
+
+                                            <SelectP
+                                                onChange={(e) => handleChange(e)}
+                                                required
+                                                name="tipo"
+                                                value={formulario.tipo}
+                                            >
+                                            <option selected disabled value="">Tipo de film</option>
+                                            <option value="Fashion Film">Fashion Film</option>
+                                            <option value="Videoclip">Videoclip</option>
+                                            <option value="Contenido Digital Corto">Contenido Digital Corto</option>
+                                            </SelectP>
+
+                                            <SelectP
+                                                onChange={(e) => handleChange(e)}
+                                                required
+                                                name="musica"
+                                                value={formulario.musica}
+                                            >
+                                            <option selected disabled value="">Música original</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                            </SelectP>
                                             <TextField value={formulario.pais} type="text" required placeholder="País" name="pais" onChange={(e) => handleChange(e)} />
                                             <FormControlLabel
                                                 value="terminos"
@@ -313,7 +377,20 @@ const Inscripcion = () => {
                                                 />
                                         </Col>
                                         <Col>
-                                            <TextField value={formulario.fin} type="text" placeholder="Fines del Film" name="fin" onChange={(e) => handleChange(e)} />
+                                            <SelectP
+                                                onChange={(e) => handleChange(e)}
+                                                required
+                                                name="publicitario"
+                                            >
+                                            <option selected disabled value="">Fines del Film</option>
+                                            <option value="Artistico">Artísticos</option>
+                                            <option value="publicitario">Publicitarios</option>
+                                            </SelectP>
+                                            {
+                                                (publicitario === 'publicitario') ? (
+                                                    <TextField value={formulario.fin} type="text" placeholder="Marca" name="fin" onChange={(e) => handleChange(e)} />
+                                                ) : null
+                                            }
                                             <Row>
                                                 <Col>
                                                     <TextField value={formulario.year} type="text" placeholder="Año de estreno" name="year" onChange={(e) => handleChange(e)} />

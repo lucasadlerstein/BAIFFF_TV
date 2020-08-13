@@ -28,7 +28,7 @@ const ImagenParallax = ({imagen, nombre}) => {
             <Parallax
                 bgImage={imagen}
                 bgImageAlt={nombre}
-                strength={ancho ? 200 : 80 }
+                strength={ancho ? 200 : 30 }
             >   
                 <DivP />
             </Parallax>

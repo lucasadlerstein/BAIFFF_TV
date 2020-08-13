@@ -24,18 +24,25 @@ const ContenedorUno = styled.div`
         font-style: normal;
         font-weight: normal;
     }   
-
     @media (min-width: 768px){
         padding: 3.5rem 5rem;
         /* padding-left: 0; */
         h4 {
-            font-size: 5rem; /* 6.8rem */
+            font-size: 3rem; /* 5rem */
+        }
+        h3 {
+            font-size: 2rem; /* 4.4rem */
+        }
+    }
+    @media (min-width: 991px){
+        h4 {
+            font-size: 5rem;
         }
         h3 {
             font-size: 3.2rem; /* 4.4rem */
         }
     }
-    @media (min-width: 1100px){
+    @media (min-width: 1175px){
         padding: 3.5rem 5rem;
         /* padding-left: 0; */
         h4 {
@@ -51,7 +58,12 @@ const Mini = styled.span`
         font-size: 3rem!important;
         position: relative;
         top: -4px;
+        color: #ff0000!important;
     @media (min-width: 768px){
+        font-size: 3rem!important;
+        top: 0;
+    }
+    @media (min-width: 991px){
         font-size: 6rem!important;
         top: 0;
     }
@@ -63,7 +75,7 @@ const ContenedorDos = styled.div`
   
     h2 {
         text-transform: uppercase;
-        font-size: 3.7rem;
+        font-size: 3rem;
         line-height: 8.6rem;
         color: white;
         margin-bottom: 0;
@@ -86,6 +98,11 @@ const ContenedorDos = styled.div`
         width: 90%;
         margin: 0 auto;
     }
+    @media (min-width: 540px){
+        h2 {
+            font-size: 3.7rem;
+        }
+    }
     @media (max-width: 768px){
         .botonInfo {
             text-align: center;
@@ -107,11 +124,10 @@ const ContenedorDos = styled.div`
     }
     
     @media (min-width: 768px){
-        
         padding: 9rem 5rem;
         text-align: center;
         h2 {
-            font-size: 6rem;
+            font-size: 3.2rem;
         }
         p {
             /* margin: 0 auto; */
@@ -121,6 +137,27 @@ const ContenedorDos = styled.div`
         }
         div {
             /* margin-left: 3rem; */
+        }
+    }
+    
+    @media (min-width: 900px){
+        h2 {
+            font-size: 4rem;
+        }
+    }
+    @media (min-width: 991px){
+        h2 {
+            font-size: 4.5rem;
+        }
+    }
+    @media (min-width: 1100px){
+        h2 {
+            font-size: 5rem;
+        }
+    }
+    @media (min-width: 1220px){
+        h2 {
+            font-size: 6rem;
         }
     }
     @media (min-width: 1400px){

@@ -22,7 +22,7 @@ const RowP = styled(Row)`
 
 const EdicionesAnteriores = () => {
     return (
-        <Contenedor>
+        <Contenedor id="ediciones-anteriores">
             <TituloSeccion texto={'Ediciones Anteriores'} tamano={'6rem'}/>
             <RowP>
                 <Col sm={12} lg={4}>
@@ -36,7 +36,6 @@ const EdicionesAnteriores = () => {
                 </Col>
             </RowP>
         </Contenedor>
-
     );
 }
  

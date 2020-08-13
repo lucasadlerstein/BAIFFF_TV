@@ -7,6 +7,7 @@ const TituloSeccion = ({texto, tamano, tamanoSm, color}) => {
         font-family: 'MonumentExtended';
         text-transform: uppercase;
         font-size: ${tamanoSm ? tamanoSm : '3.5rem'};
+        padding: ${texto === 'Sponsors y aliados' ? '0 5rem' : '0'};
         line-height:58px;
         color: ${color ? color : '#ff0000'};
         text-align:center;
@@ -15,7 +16,7 @@ const TituloSeccion = ({texto, tamano, tamanoSm, color}) => {
         }
     `;
 
-    return ( 
+    return (
        <Titulo>{texto}</Titulo>
     );
 }

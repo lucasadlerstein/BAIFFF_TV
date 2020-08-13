@@ -64,7 +64,7 @@ const AgendaContenido = ({dia, programacion, info, abierto}) => {
     `;
     
     let imagen;
-    if(abierto){
+    if(abierto === info.imagen){
         imagen = 'chevron-cerrado.svg';
     } else {
         imagen = 'chevron.svg';

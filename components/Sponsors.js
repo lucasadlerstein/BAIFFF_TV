@@ -36,6 +36,7 @@ const ColumnaAfiliado = styled(Col)`
 `;
 
 const Sponsors = () => {
+
     return ( 
         <>
             <Contenedor>

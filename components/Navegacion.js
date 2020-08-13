@@ -78,7 +78,7 @@ const Navegacion = () => {
                         <img src="/img/logo.svg" alt="Logo BAIFFF" className={styles.logo} />
                     </NavbarBrandP>
                     <button
-                        className={`${styles.btnidioma} noDesktop`}
+                        className={`${styles.btnidioma} noDesktop991`}
                     >EN</button>
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
@@ -124,7 +124,7 @@ const Navegacion = () => {
                             
                         </Collapse>
                         <button
-                            className={`${styles.btnidioma} noMobile`}
+                            className={`${styles.btnidioma} justDesktop`}
                         >EN</button>
                     </NavBarP>
                 </Container>
