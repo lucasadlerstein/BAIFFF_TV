@@ -181,7 +181,7 @@ const ContenidoIzq = styled.div`
 `;
 
 const ElFestival = () => {
-    return ( 
+    return (
         <RowP id="this_year">
             <Columna sm={12} lg={7}>
                 <Izquierda>
