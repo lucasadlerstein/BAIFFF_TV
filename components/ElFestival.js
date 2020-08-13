@@ -89,6 +89,7 @@ const Botones = styled.div`
 const Derecha = styled.div`
     @media (min-width: 768px){
         overflow-x: hidden;
+        width: calc(100% + 0.1px);
     }
 `;
 const Cartel = styled.h4`

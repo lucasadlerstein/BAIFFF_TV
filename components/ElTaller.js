@@ -41,9 +41,9 @@ const ElTaller = ({titulo, contenido, imagen}) => {
         }
         @media (min-width: 768px){
             width: 50%;
-            text-align: left;
             padding: 5rem;
             h3 {
+                text-align: left;
                 font-size: 3.7rem;
             }
         }
@@ -54,13 +54,12 @@ const ElTaller = ({titulo, contenido, imagen}) => {
             }
         }
         @media (min-width: 1200px){
-            padding: 6rem 9rem;
+            padding: 6rem 7rem;
             h3 {
                 font-size: 5.7rem;
             }
         }
         @media (min-width: 1400px){
-            padding: 6rem 9rem;
             h3 {
                 font-size: 7rem;
             }

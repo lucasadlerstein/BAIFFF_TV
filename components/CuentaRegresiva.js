@@ -42,7 +42,6 @@ const CuentaRegresiva = () => {
         } else {
             setAncho(false);
         }
-        console.log(width, ' ', ancho);
         // eslint-disable-next-line
     }, []);
 

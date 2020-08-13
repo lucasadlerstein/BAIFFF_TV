@@ -22,12 +22,14 @@ const VideoPortada = () => {
     return ( 
         <ContenedorVideo>
             <video
+                playsinline 
                 loop
+                autoPlay
                 style={{
                     width: '100%',
                     height: '100%',
                 }}
-                src="img/PORTADA.mp4" autoPlay />
+                src="img/PORTADA.mp4" />
             <Logo src="img/logo.svg" />
         </ ContenedorVideo>
     );

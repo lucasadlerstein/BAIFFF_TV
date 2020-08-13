@@ -109,7 +109,7 @@ const AbiertoAgenda = ({info}) => {
                     <br />WHISPERING INDIA by GUS&LO – ESPAÑA
                 </p>
                 <Botones>
-                    <BotonDU>60 mins.</BotonDU>
+                    <BotonDU>{info.duracion}</BotonDU>
                     <Link href="/live">
                         <BotonYT>Ver en vivo</BotonYT>
                     </Link>

@@ -100,17 +100,17 @@ const AgendaComponente = () => {
         },
         {
             imagen: '/img/NOSOTROS/Nosotros_Galeria_2.jpg',
-            duracion: '60 mins.',
+            duracion: '30 mins.',
             contenido: ''
         },
         {
             imagen: '/img/NOSOTROS/Nosotros_Galeria_3.jpg',
-            duracion: '60 mins.',
+            duracion: '15 mins.',
             contenido: ''
         },
         {
             imagen: '/img/NOSOTROS/Nosotros_Galeria_4.jpg',
-            duracion: '60 mins.',
+            duracion: '30 mins.',
             contenido: ''
         }
     ]; 
@@ -147,13 +147,13 @@ const AgendaComponente = () => {
             ><AgendaContenido dia={'12.00'} programacion={'Proyeccion Baifff . Parte 1'} info={info[0]} abierto={abierto} /></BotonInvisible>
             <BotonInvisible
                 onClick={() => cambiarVisibilidad(info[1].imagen)}
-            ><AgendaContenido dia={'12.00'} programacion={'Proyeccion Baifff . Parte 1'} info={info[1]} abierto={abierto} /></BotonInvisible>
+            ><AgendaContenido dia={'13.00'} programacion={'Proyeccion Baifff . Parte 2'} info={info[1]} abierto={abierto} /></BotonInvisible>
             <BotonInvisible
                 onClick={() => cambiarVisibilidad(info[2].imagen)}
-            ><AgendaContenido dia={'12.00'} programacion={'Proyeccion Baifff . Parte 1'} info={info[2]} abierto={abierto} /></BotonInvisible>
+            ><AgendaContenido dia={'15.00'} programacion={'Comercial IIV'} info={info[2]} abierto={abierto} /></BotonInvisible>
             <BotonInvisible
                 onClick={() => cambiarVisibilidad(info[3].imagen)}
-            ><AgendaContenido dia={'12.00'} programacion={'Proyeccion Baifff . Parte 1'} info={info[3]} abierto={abierto} /></BotonInvisible>
+            ><AgendaContenido dia={'17.15'} programacion={'Proyeccion Baifff . Parte 4'} info={info[3]} abierto={abierto} /></BotonInvisible>
 
         </Contenedor>
     );
