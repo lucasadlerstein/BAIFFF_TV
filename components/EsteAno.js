@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row, Col} from 'reactstrap';
-import Boton from './ui/Boton';
 import styled from '@emotion/styled';
 
 const Izquierda = styled.div`
@@ -19,7 +18,7 @@ const Izquierda = styled.div`
         line-height: 21px;
         text-align: justify;
         color: black;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
     }
     @media (min-width: 400px){
         h2 {
@@ -58,8 +57,8 @@ const Izquierda = styled.div`
     }
     @media (min-width: 1395px){
         padding: 6rem 5rem;
-        max-width: 85%;
-            margin: 0 auto;
+        /* max-width: 85%;
+        margin: 0 auto; */
         h2 {
             font-size: 7.2rem;
         }
@@ -70,6 +69,7 @@ const Lista = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-bottom: 3.5rem;
     @media (min-width: 768px){
         width: 120%;
     }
@@ -94,26 +94,6 @@ const Lista = styled.ul`
         /* color: #ff0000!important; */
         /* content: '▪'; */
         /* font-size: 5rem; */
-    }
-`;
-const Botones = styled.div`
-    margin-top: 5rem;
-    text-align: left;
-    @media (max-width: 768px){
-        margin: 3rem auto;
-        display: grid;
-        text-align: center;
-        /* max-width: 90%; */
-        row-gap: 1.5rem;
-    }
-    @media (max-width: 1155px) and (min-width: 991px) {
-        margin: 3rem auto;
-        display: grid;
-        text-align: center;
-        row-gap: 1.5rem;
-        a {
-            margin-right: 0;
-        }
     }
 `;
 const Derecha = styled.div`
@@ -167,7 +147,7 @@ const Imagen = styled.div`
         content:'';
         display: block;
         position: relative;
-        min-height: 60rem;
+        min-height: 50rem;
         /* min-width: 120%; */
         max-width:100%;
         top: 0;
@@ -176,7 +156,7 @@ const Imagen = styled.div`
         right: 0;
         width: auto;
         z-index: -1;
-        background-image: url('/img/HOME/Home_2.jpg');
+        background-image: url('/img/MASINFO/MasInfo_1.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -202,41 +182,33 @@ const ContenidoIzq = styled.div`
 
 const ElFestival = () => {
     return ( 
-        <RowP>
+        <RowP id="this_year">
             <Columna sm={12} lg={7}>
                 <Izquierda>
                     <ContenidoIzq>
-                        <h2>El festival</h2>
                         <p>
-                            En un momento como el que estamos viviendo, debemos estar más presentes que nunca para apoyarnos entre toda la comunidad de artistas, realizadores audiovisuales y diseñadores de moda. Por esta razón la edición de BAIFFF 2020 no se detiene y se hará de forma on line. Continuaremos con la labor de convocar, promocionar y premiar a los mejores profesionales de la industria en 12 categorías:
+                            <strong>BAIFFF 2020 Edición Digital</strong> es una expansión del festival al modo on line. El público podrá disfrutar de las experiencia BAIFFF en primera fila, desde donde quieran y en cualquier parte del mundo.
+                        </p>
+                        <p>
+                            Como todos los años tendremos proyecciones de los films en competencia, charlas con destacados representantes de la mundo del fashion film international, performances artísticas, proyecciones curadas por invitados internacionales, música en vivo, exposición de fotos de moda y muchas más actividades.
+                        </p>
+                        <p>
+                            Este año tenemos 3 nuevas categorías:                        
                         </p>
                         <Lista>
-                            <li>Mejor Fashion Film Nacional | Internacional | Emergente</li>
                             <li>Mejor videoclip</li>
                             <li>Mejor contenido digital corto</li>
                             <li>Mejor film experimental</li>
-                            <li>Premio del público</li>
-                            <li>Mejor idea</li>
-                            <li>Mejor performance</li>
-                            <li>Mejor cinematografía</li>
-                            <li>Mejor dirección de arte</li>
-                            <li>Mejor estilismo</li>
-                            <li>Mejor makeup & hair</li>
-                            <li>Mejor música original</li>
                         </Lista>
-                        <Botones>
-                            <Boton
-                                color={true}
-                                texto={'Más info'}
-                                destino={'/edicion-digital'}
-                                mr={'3rem'}
-                            />
-                            <Boton
-                                color={true}
-                                texto={'Juradxs'}
-                                destino={'edicion-digital#juradxs'}
-                            />
-                        </Botones>
+                        <p>
+                            Estas piezas deben destacar por su valor Estético/Visual relacionado con Moda, Lifestyle y/o Belleza [ Estilismo, Maquillaje, Pelo, Vestuario o Accesorios ].
+                        </p>
+                        <p>
+                            El público podrá participar votando por sus films favoritos a través de nuestras redes sociales. 
+                        </p>
+                        <p>
+                            <strong>Seguinos y está atento a las novedades a través de nuestras redes.</strong>
+                        </p>
                     </ContenidoIzq>
                 </Izquierda>
             </Columna>
@@ -245,7 +217,7 @@ const ElFestival = () => {
                     <RowP>
                         <Columna xs={{size: 12, order: 'last'}}>
                             <Cartel>
-                                Primer festival <span>latinoamericano de fashion films</span>
+                                ¡Este año <span>BAIFFF lo vivís desde donde estés!</span>
                             </Cartel>
                         </Columna>
                         <Columna xs={{size: 12, order: 'first'}}>

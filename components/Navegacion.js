@@ -8,15 +8,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText,
     Container,
-    Row,
-    Col
   } from 'reactstrap';
 import styles from '../styles/Navegacion.module.css'
 
@@ -65,8 +61,10 @@ const NavbarTogglerP = styled(NavbarToggler)`
 
 const Navegacion = () => {
 
+    const [isOpenHoverA, setIsOpenHover] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const mouseNav = (estado) => { setIsOpenHover(estado); }
 
     return (
         <>
@@ -97,7 +95,7 @@ const Navegacion = () => {
                                     <a className={styles.boton}>Agenda</a>
                                 </Link>
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar id="edicionesNav">
+                            <UncontrolledDropdown isOpen={isOpenHoverA} onMouseEnter={() => mouseNav(true)} onMouseLeave={() => mouseNav(false)} nav inNavbar id="edicionesNav">
                                 <DropdownToggle nav >
                                     <a className={`${styles.boton} ${styles.botonediciones}`}>Ediciones</a>
                                 </DropdownToggle>

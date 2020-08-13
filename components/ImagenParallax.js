@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 const DivP = styled.div`
     height: 15rem;
     @media (min-width: 768px){
-        height: 40rem;
+        height: 35rem;
     }
 `;
 

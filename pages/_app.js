@@ -19,6 +19,13 @@ const GlobalStyle = createGlobalStyle`
       src: url('/fonts/Ralway-Italic.ttf');
       src: url('/fonts/Raleway-Regular.ttf');
   }
+  @font-face {
+    font-family: 'Raleway Bold';
+      src: url('/fonts/Ralway-Bold.ttf');
+  }
+
+
+
   h1, h2, h3, h4 {
     font-family: 'MonumentExtended'
   }

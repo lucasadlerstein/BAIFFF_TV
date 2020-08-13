@@ -28,6 +28,9 @@ const CartelRojo = styled.p`
     font-family: 'MonumentExtended';
     text-transform: uppercase;
     color: white;
+    @media (min-width: 370px){
+        font-size: 3rem;
+    }
     @media (min-width: 540px){
         font-size: 3.2rem;
     }

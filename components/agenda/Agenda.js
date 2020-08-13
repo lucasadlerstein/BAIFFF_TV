@@ -113,7 +113,7 @@ const AgendaComponente = () => {
             duracion: '30 mins.',
             contenido: ''
         }
-    ]; 
+    ];
 
     const cambiarVisibilidad = e => {
         if(abierto === e) {

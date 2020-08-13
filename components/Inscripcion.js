@@ -34,7 +34,6 @@ const TextField = styled.input`
         outline: none;
     }
 `;
-
 const SelectP = styled.select`
     font-family: 'Raleway';
     border: none;
@@ -54,7 +53,6 @@ const SelectP = styled.select`
         outline: none;
     }
 `;
-
 const RowPersonalizada = styled(Row)`
     margin: 3rem auto 2rem auto;
     @media (min-width: 768px){
@@ -206,9 +204,9 @@ const Inscripcion = () => {
                 (formulario.d_nacionalidad).trim() === '' ||
                 (formulario.d_nacimiento).trim() === '' ||
                 (formulario.d_tipo).trim() === '' ||
-                (formulario.d_website).trim() === '' ||
-                (formulario.d_facebook).trim() === '' ||
-                (formulario.d_instagram).trim() === '' ||
+                // (formulario.d_website).trim() === '' ||
+                // (formulario.d_facebook).trim() === '' ||
+                // (formulario.d_instagram).trim() === '' ||
                 (formulario.d_email).trim() === '') {
                 setError('Todos los campos son obligatorios');    
             } else {
@@ -232,8 +230,8 @@ const Inscripcion = () => {
             (formulario.duracion).trim() === '' ||
             (formulario.musica).trim() === '' ||
             (formulario.link).trim() === '' ||
-            (formulario.pais).trim() === '' || 
-            (formulario.pass).trim() === '') {
+            // (formulario.pass).trim() === '' || 
+            (formulario.pais).trim() === '') {
                 setError('Todos los campos son obligatorios'); 
                 setTimeout(() => {
                     setError(null);
