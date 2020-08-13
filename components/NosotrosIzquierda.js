@@ -23,10 +23,13 @@ const ContenedorUno = styled.div`
         line-height: 20px;
         font-style: normal;
         font-weight: normal;
+        margin-bottom: 0;
     }   
     @media (min-width: 540px){
-        font-size: 2.5rem;
-        line-height: 30px;
+        h3 {
+            font-size: 2.5rem;
+            line-height: 30px;
+        }
     }
     @media (min-width: 768px){
         padding: 3.5rem 5rem;
@@ -36,6 +39,8 @@ const ContenedorUno = styled.div`
         }
         h3 {
             font-size: 2rem; /* 4.4rem */
+            line-height: 50px;
+
         }
     }
     @media (min-width: 991px){
