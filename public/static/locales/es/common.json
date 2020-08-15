@@ -1,0 +1,22 @@
+{
+    "Nav": {
+        "Inicio": "Home",
+        "Nosotros": "Nosotrxs",
+        "Agenda": "Agenda",
+        "Ediciones": "Ediciones",
+        "Edicion15": "Edición 2015",
+        "Edicion16": "Edición 2016",
+        "Edicion17": "Edición 2017",
+        "Terminos": "Términos",
+        "PDF": "BASES_Y_CONDICIONES_BAIFFF2020.pdf"
+    },
+    "Head": {
+        "Title": "BAIFFF - Buenos Aires International Fashion Film Festival",
+        "Description": "",
+        "Keywords": ""
+    },
+    "Footer": {
+        "Derechos": "BAIFFF 2020 © Todos los derechos reservados.",
+        "Infinidad": " Desarrollo por INFINIDAD"
+    }
+}

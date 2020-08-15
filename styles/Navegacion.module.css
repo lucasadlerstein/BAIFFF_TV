@@ -25,7 +25,7 @@
     font-style: normal;
     font-weight: normal;
     text-transform: uppercase;
-    padding: 3.3rem 3rem;
+    padding: 3.2rem 3rem;
     line-height: 14px;
     text-align: center;
     text-decoration: none;
@@ -66,7 +66,7 @@
 
 @media (min-width: 1100px){
     .boton {
-        padding: 3.3rem 4rem;
+        padding: 3.2rem 4rem;
     }
     .botonlive {
         padding: 2.5rem 5.5rem;
@@ -124,6 +124,10 @@
     color: white;
     margin-left: 5rem;
     transition: all .3s ease-in-out;
+}
+
+.btnidioma:focus {
+    outline: none;
 }
 
 @media (max-width: 991px ){

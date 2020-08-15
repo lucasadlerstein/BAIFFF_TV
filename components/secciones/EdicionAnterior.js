@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Boton from '../ui/Boton';
 
+import {withTranslation} from '../../i18n';
+
 const Tarjeta = styled.div`
     margin: 0 auto;
     text-align: center;
@@ -32,18 +34,18 @@ const FooterBoton = styled.div`
     }
 `;
 
-const EdicionAnterior = ({imagen, titulo, link}) => {
+const EdicionAnterior = ({imagen, titulo, link, t}) => {
     return (
         <>
             <Tarjeta>
                 <Titulo>{titulo}</Titulo>
                 <img src={imagen} alt={titulo} />
                 <FooterBoton>
-                    <Boton color={false} texto={'Más info'} destino={link} anchoMobile={'80%'}  />
+                    <Boton color={false} texto={t('EdicionesAnteriores.Boton')} destino={link} anchoMobile={'80%'}  />
                 </FooterBoton>
             </Tarjeta>
         </>
     );
 }
  
-export default EdicionAnterior;
+export default withTranslation('nosotros')(EdicionAnterior);

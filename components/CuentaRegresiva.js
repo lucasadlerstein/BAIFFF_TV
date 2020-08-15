@@ -65,7 +65,7 @@ const CuentaRegresiva = () => {
         <div>
             <Parallax
                 bgImage={'/img/HOME/Home_Countdown.jpg'}
-                bgImageAlt={'23, 24 y 25 de Septiembre de 2020'}
+                bgImageAlt={'24, 25 y 26 de Septiembre de 2020'}
                 strength={ancho ? 100 : 80 }
             >   
                 <DivP>

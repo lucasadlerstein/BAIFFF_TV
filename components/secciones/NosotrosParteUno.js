@@ -1,6 +1,8 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import {Row, Col} from 'reactstrap';
 import styled from '@emotion/styled';
+
+import { i18n, withTranslation } from '../../i18n';
 
 const Parrafo = styled.p`
     padding: 3.5rem;
@@ -8,9 +10,11 @@ const Parrafo = styled.p`
     text-align: left;
     line-height: 2.1rem;
     color: black;
-    span {
+    a {
         text-decoration: underline;
         font-style: italic;
+        text-decoration-color: black;
+        color: black;
     }
     @media (min-width: 768px){
         padding: 7rem;
@@ -47,6 +51,11 @@ const CartelRojo = styled.p`
             display: inline-block;
         }
     }
+    #music {
+        @media (min-width: 1373px){
+            display: none;
+        }
+    }
 `;
 
 const ImagenDerecha = styled.div`
@@ -78,20 +87,20 @@ const ColumnaIzq = styled(Col)`
     }
 `;
 
-const NosotrosParteUno = () => {
+const NosotrosParteUno = ({t}) => {
     return (
         <>
             <Row className="nmm">
                 <ColumnaIzq sm={12} lg={7} style={{paddingRight: '0'}}>
                     <Parrafo>
-                        Somos un festival internacional que promueve la interacción entre la <strong>moda, el cine, las artes visuales, la música, la tecnología y la publicidad.</strong> Convocamos, promocionamos y premiamos el trabajo de realizadores audiovisuales, diseñadores, fotógrafos, músicos, influencers y marcas, en un espacio creativo, inclusivo y cultural.
+                        {t('Nosotros.Texto.1a')}<strong>{t('Nosotros.Texto.1b')}</strong>{t('Nosotros.Texto.1c')}
                         <br /><br />
-                        El mundo digital cambió la manera en la que nos comunicamos. Hoy en día, diseñadores, marcas y artistas, interactúan con su público a través de contenidos audiovisuales de entretenimiento, de alto valor estético y creativo, que conecten con sus valores, gustos y emociones, mediante nuevas plataformas digitales de difusión. <strong>BAIFFF</strong> reconoce estos trabajos y destaca el aporte que hacen a la cultura visual de nuestros tiempos.
+                        {t('Nosotros.Texto.2a')}<strong>BAIFFF</strong> {t('Nosotros.Texto.2b')}
                         <br /><br />
-                        Luego de 3 exitosas ediciones, <strong>BAIFFF</strong> se ha convertido en un festival único en su estilo. Seleccionado por la revista <span>Forbes Internacional</span>, como uno de los 5 mejores festivales de Fashion Film en el mundo, es un referente internacional en el desarrollo de este género audiovisual.
+                        {t('Nosotros.Texto.3a')}<strong> BAIFFF</strong> {t('Nosotros.Texto.3b')} <a href="https://www.forbes.com/sites/stephanrabimov/2018/07/30/top-5-fashion-film-festivals-to-watch/#79f4386f5b04" target="_blank" rel="noopener noreferrer">Forbes Internacional</a>{t('Nosotros.Texto.3c')}
                     </Parrafo>
                     <CartelRojo className="noMobile">
-                         Moda <span>-</span> Música <span> - </span> Cine <br/> Arte <span> - </span> Publicidad 
+                        {t('Nosotros.Items.1')} <span> -</span> {t('Nosotros.Items.2')} <span  id={ i18n.language === 'en' ? 'music' : null}> - </span> {t('Nosotros.Items.3')} <br/> {t('Nosotros.Items.4')} <span> - </span> {t('Nosotros.Items.5')} 
                     </CartelRojo>
                 </ColumnaIzq>
                 
@@ -100,7 +109,7 @@ const NosotrosParteUno = () => {
                     </ImagenDerecha>
                     
                     <CartelRojo className="noDesktop">
-                         Moda <span>-</span> Música <span> - </span> Cine <br/> Arte <span> - </span> Publicidad 
+                        {t('Nosotros.Items.1')} <span> -</span> {t('Nosotros.Items.2')} <span> - </span> {t('Nosotros.Items.3')} <br/> {t('Nosotros.Items.4')} <span> - </span> {t('Nosotros.Items.5')} 
                     </CartelRojo>
                 </ColumnaDer>
 
@@ -109,4 +118,4 @@ const NosotrosParteUno = () => {
     );
 }
  
-export default NosotrosParteUno;
+export default withTranslation('nosotros')(NosotrosParteUno);

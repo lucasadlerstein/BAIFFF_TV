@@ -3,6 +3,8 @@ import ContactoFooter from './ContactoFooter';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+import {withTranslation} from '../i18n';
+
 const NavFooter = styled.div`
     background-color: #727171;
     width: 100%;
@@ -65,25 +67,25 @@ const Derechos = styled.div`
     }
 `;
 
-const Footer = () => {
+const Footer = ({t}) => {
     return ( 
         <>
             <ContactoFooter />
             <NavFooter>
-                <Link href="/"><ItemNav>Home</ItemNav></Link>
-                <Link href="/nosotrxs"><ItemNav>Nosotrxs</ItemNav></Link>
-                <Link href="/agenda"><ItemNav>Agenda</ItemNav></Link>
-                <Link href="/nosotrxs#ediciones-anteriores"><ItemNav>Ediciones</ItemNav></Link>
-                <ItemNav target="_blank" rel="noopener noreferrer" href="/terms/BASES_Y_CONDICIONES_BAIFFF2020.pdf">Términos</ItemNav>
+                <Link href="/"><ItemNav>{t('Nav.Inicio')}</ItemNav></Link>
+                <Link href="/nosotrxs"><ItemNav>{t('Nav.Nosotros')}</ItemNav></Link>
+                <Link href="/agenda"><ItemNav>{t('Nav.Agenda')}</ItemNav></Link>
+                <Link href="/nosotrxs#ediciones-anteriores"><ItemNav>{t('Nav.Ediciones')}</ItemNav></Link>
+                <ItemNav target="_blank" rel="noopener noreferrer" href={`/terms/${t('Nav.PDF')}`}>{t('Nav.Terminos')}</ItemNav>
             </NavFooter>
             <Derechos>
                 <p>
-                    BAIFFF 2020 © Todos los derechos reservados. 
-                    <a href="https://infinidad.com.ar" target="_blank"> Desarrollo por INFINIDAD</a>
+                    {t('Footer.Derechos')} 
+                    <a href="http://infinidad.com.ar" target="_blank"> {t('Footer.Infinidad')}</a>
                 </p>
             </Derechos>
         </>
     );
 }
  
-export default Footer;
+export default withTranslation('common')(Footer);

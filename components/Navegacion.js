@@ -16,6 +16,8 @@ import {
   } from 'reactstrap';
 import styles from '../styles/Navegacion.module.css'
 
+import { i18n, withTranslation } from '../i18n';
+
 const NavBarP = styled(Navbar)`
     padding: 0;
 `;
@@ -25,7 +27,6 @@ const NavbarBrandP = styled(NavbarBrand)`
         margin-right: 0;
     }
 `;
-
 const DropdownMenuP = styled(DropdownMenu)`
     z-index: 999;
     background-color: black;
@@ -47,7 +48,6 @@ const DropdownMenuP = styled(DropdownMenu)`
         margin-top: 1rem;
     }
 `;
-
 const NavbarTogglerP = styled(NavbarToggler)`
     border-color: transparent;
     &:focus{
@@ -59,7 +59,7 @@ const NavbarTogglerP = styled(NavbarToggler)`
     }
 `;
 
-const Navegacion = () => {
+const Navegacion = ({t}) => {
 
     const [isOpenHoverA, setIsOpenHover] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -77,37 +77,38 @@ const Navegacion = () => {
                     </NavbarBrandP>
                     <button
                         className={`${styles.btnidioma} noDesktop991`}
-                    >EN</button>
+                        onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en')}
+                    >{i18n.language === 'en' ? 'ES' : 'EN'}</button>
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
                                 <Link href="/">
-                                    <a className={styles.boton}>Home</a>
+                                    <a className={styles.boton}>{t('Nav.Inicio')}</a>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link href="/nosotrxs">
-                                    <a className={styles.boton}>Nosotrxs</a>
+                                    <a className={styles.boton}>{t('Nav.Nosotros')}</a>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link href="/agenda">
-                                    <a className={styles.boton}>Agenda</a>
+                                    <a className={styles.boton}>{t('Nav.Agenda')}</a>
                                 </Link>
                             </NavItem>
                             <UncontrolledDropdown isOpen={isOpenHoverA} onMouseEnter={() => mouseNav(true)} onMouseLeave={() => mouseNav(false)} nav inNavbar id="edicionesNav">
                                 <DropdownToggle nav >
-                                    <a className={`${styles.boton} ${styles.botonediciones}`}>Ediciones</a>
+                                    <a className={`${styles.boton} ${styles.botonediciones}`}>{t('Nav.Ediciones')}</a>
                                 </DropdownToggle>
                                 <DropdownMenuP>
                                     <DropdownItem href="/ediciones/2017" className={`${styles.boton}`}>
-                                    Edición 2017
+                                    {t('Nav.Edicion15')}
                                     </DropdownItem>
                                     <DropdownItem href="/ediciones/2016" className={`${styles.boton}`}>
-                                    Edición 2016
+                                    {t('Nav.Edicion16')}
                                     </DropdownItem>
                                     <DropdownItem href="/ediciones/2015" className={`${styles.boton}`}>
-                                    Edición 2015
+                                    {t('Nav.Edicion17')}
                                     </DropdownItem>
                                 </DropdownMenuP>
                             </UncontrolledDropdown>
@@ -123,12 +124,18 @@ const Navegacion = () => {
                         </Collapse>
                         <button
                             className={`${styles.btnidioma} justDesktop`}
-                        >EN</button>
+                            onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en')}
+                        >{i18n.language === 'en' ? 'ES' : 'EN'}</button>
                     </NavBarP>
                 </Container>
             </div>
         </>
     );
+
 }
+
+Navegacion.getInitialProps = async () => ({
+    namespacesRequired: ['common'],
+});
  
-export default Navegacion;
+export default withTranslation('common')(Navegacion);

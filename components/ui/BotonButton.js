@@ -6,7 +6,7 @@ const BotonButton = ({color, texto, mr, anchoMobile}) => {
     const BotonUI = styled.button`
         text-transform: uppercase;
         font-size: 1.8rem;
-        padding: 1.5rem 5rem;
+        padding: 1.5rem 2rem;
         font-family: 'MonumentExtended', sans-serif;
         /* font-weight: 700; */
         text-decoration: none;
@@ -17,6 +17,8 @@ const BotonButton = ({color, texto, mr, anchoMobile}) => {
         transition: all .3s ease;
         @media (min-width: 768px ){
             margin-right: ${mr ? mr : '0'};        
+            padding: 1.5rem 5rem;
+
         }
 
         &:hover {

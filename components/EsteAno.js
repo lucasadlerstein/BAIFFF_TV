@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col} from 'reactstrap';
 import styled from '@emotion/styled';
+import {withTranslation} from '../i18n';
 
 const Izquierda = styled.div`
     padding: 2rem 0;
@@ -180,34 +181,34 @@ const ContenidoIzq = styled.div`
     }
 `;
 
-const ElFestival = () => {
+const ElFestival = ({t}) => {
     return (
         <RowP id="this_year">
             <Columna sm={12} lg={7}>
                 <Izquierda>
                     <ContenidoIzq>
                         <p>
-                            <strong>BAIFFF 2020 Edición Digital</strong> es una expansión del festival al modo on line. El público podrá disfrutar de las experiencia BAIFFF en primera fila, desde donde quieran y en cualquier parte del mundo.
+                            <strong>{t('Edicion.Texto.1a')}</strong>{t('Edicion.Texto.1b')}
                         </p>
                         <p>
-                            Como todos los años tendremos proyecciones de los films en competencia, charlas con destacados representantes de la mundo del fashion film international, performances artísticas, proyecciones curadas por invitados internacionales, música en vivo, exposición de fotos de moda y muchas más actividades.
+                            {t('Edicion.Texto.2')}
                         </p>
                         <p>
-                            Este año tenemos 3 nuevas categorías:                        
+                            {t('Edicion.Texto.3')}
                         </p>
                         <Lista>
-                            <li>Mejor videoclip</li>
-                            <li>Mejor contenido digital corto</li>
-                            <li>Mejor film experimental</li>
+                            <li>{t('Edicion.Texto.NewCat.1')}</li>
+                            <li>{t('Edicion.Texto.NewCat.2')}</li>
+                            <li>{t('Edicion.Texto.NewCat.3')}</li>
                         </Lista>
                         <p>
-                            Estas piezas deben destacar por su valor Estético/Visual relacionado con Moda, Lifestyle y/o Belleza [ Estilismo, Maquillaje, Pelo, Vestuario o Accesorios ].
+                            {t('Edicion.Texto.4')}
                         </p>
                         <p>
-                            El público podrá participar votando por sus films favoritos a través de nuestras redes sociales. 
+                            {t('Edicion.Texto.5')}
                         </p>
                         <p>
-                            <strong>Seguinos y está atento a las novedades a través de nuestras redes.</strong>
+                            <strong>{t('Edicion.Texto.6')}</strong>
                         </p>
                     </ContenidoIzq>
                 </Izquierda>
@@ -217,7 +218,7 @@ const ElFestival = () => {
                     <RowP>
                         <Columna xs={{size: 12, order: 'last'}}>
                             <Cartel>
-                                ¡Este año <span>BAIFFF lo vivís desde donde estés!</span>
+                                {t('Edicion.Cartel.Titulo')}<span>{t('Edicion.Cartel.Subtitulo')}</span>
                             </Cartel>
                         </Columna>
                         <Columna xs={{size: 12, order: 'first'}}>
@@ -230,4 +231,4 @@ const ElFestival = () => {
     );
 }
  
-export default ElFestival;
+export default withTranslation('edicion-digital')(ElFestival);

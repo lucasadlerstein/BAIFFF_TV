@@ -1,0 +1,36 @@
+{
+    "Nosotros": {
+        "Titulo": "About",
+        "Texto": {
+            "1a": "We are a festival that promotes the interaction between ",
+            "1b": "FASHION, CINEMA, VISUAL ARTS, MUSIC, TECHNOLOGY and ADVERTISING. ",
+            "1c": "We invite, promote and reward the work of filmmakers, fashion designers, musicians, influencers and brands, in a creative, diverse, inclusive and cultural space.",
+            "2a": "The digital world changed the way we communicate. Today, designers, brands and artists interact with their audiences through video content of high aesthetic and creative value that connects with their emotions, tastes and values, through new digital broadcasting platforms. ",
+            "2b": " recognizes these works and highlights the contribution they make to the visual culture of our times.",
+            "3a": "After 3 successful editions, ",
+            "3b": " has become a unique festival in its style in Latin america. Selected by ",
+            "3c": " magazine, as one of the 5 best Fashion Film festivals in the world, it is an international referent in the development of this new genre."
+        },
+        "Items": {
+            "1": "Fashion",
+            "2": "Music",
+            "3": "Cinema",
+            "4": "Art",
+            "5": "Advertising"
+        }
+    },
+    "Staff": {
+        "Director": "Director",
+        "Productor": "Productor ejecutivo",
+        "GerenteProd": "Gerente de producción y creatividad",
+        "AsistenteProd": "Asistente de producción",
+        "Agencia": "Agencia digital",
+        "Logo": "Diseño de logo",
+        "ContenidoRRSS": "Contenido para RRSS",
+        "DesarrolloWeb": "Agencia de diseño y desarrollo web"
+    },
+    "EdicionesAnteriores": {
+        "Titulo": "Previous Editions",
+        "Boton": "More info"
+    }
+}

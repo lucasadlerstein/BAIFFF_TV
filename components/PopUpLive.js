@@ -2,9 +2,12 @@ import React, {useState, useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import {Row, Col} from 'reactstrap';
-import Boton from './ui/Boton';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import BotonButton from './ui/BotonButton';
 import styled from '@emotion/styled';
+import IconButton from '@material-ui/core/IconButton';
+
+import {withTranslation} from '../i18n';
 
 const DialogP = styled(Dialog)`
     .MuiDialog-paper {
@@ -24,9 +27,27 @@ const ColumnaDerecha = styled(Col)`
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
+    text-align: right;
+    
+`;
+const IconButtonP = styled(IconButton)`
+    img {
+        width: 2rem;
+    }
+    .MuiIconButton-root {
+        &:focus {
+            outline: none;
+        }
+    }
+    @media (max-width: 576px){
+        margin: .5rem 2rem 0 auto;
+    }
 `;
 const ColumnaIzquierda = styled(Col)`
     padding: 4rem calc(2rem + 15px);
+    @media (max-width: 576px){
+        padding-top: 0rem;
+    }
 `;
 const TextFieldP = styled(TextField)`
     .MuiFormLabel-root, .MuiInputBase-input {
@@ -57,10 +78,11 @@ const Perror = styled.p`
     color: #ff0000;
 `;
 
-const PopUpLive = () => {
+const PopUpLive = ({t}) => {
     
     const [popUp, setPopUp] = useState(false);
     const [error, setError] = useState(null);
+    const [ancho, setAncho] = useState(null);
     const [suscriptor, setSuscriptor] = useState({
         nombre: '',
         apellido: '',
@@ -74,6 +96,13 @@ const PopUpLive = () => {
                 setPopUp(true);
             }
         }, 15000);
+
+        let anchoNow = window.innerWidth;
+        if (anchoNow > 576){
+            setAncho(true);
+        } else {
+            setAncho(false);
+        }
         // eslint-disable-next-line
     }, []);
 
@@ -89,7 +118,7 @@ const PopUpLive = () => {
         if( suscriptor.nombre.trim() === '' ||
             suscriptor.apellido.trim() === '' ||
             suscriptor.email.trim() === '') {
-                setError('Todos los campos son obligatorios');
+                setError(t('Live.PopUp.Error'));
         }
         setTimeout(() => {
             setError(null);
@@ -107,11 +136,23 @@ const PopUpLive = () => {
         setPopUp(false);
     }
 
+    const cerrarPopUp = () => {
+        setPopUp(false);
+        window.localStorage.setItem('suscriptor', Date.now());
+    }
+
     return (
         <DialogP open={popUp} aria-labelledby="form-dialog-title">
             <Row>
+                {
+                    (ancho === true) ? null : (
+                        <IconButtonP onClick={() => cerrarPopUp()}>
+                            <img src="/img/cruz.png" alt="Cerrar newsletter Live BAIFFF" />
+                        </IconButtonP>
+                    )
+                }
                 <ColumnaIzquierda sm={7}>
-                    <Titulo>Suscribite a<br />nuestro newsletter!</Titulo>
+                    <Titulo>{t('Live.PopUp.Titulo')}</Titulo>
                     <form
                         onSubmit={(e) => enviarFormularioSuscripcion(e)}
                     >
@@ -119,7 +160,7 @@ const PopUpLive = () => {
                             autoFocus
                             margin="dense"
                             id="v_nombre"
-                            label="Nombre"
+                            label={t('Live.PopUp.Nombre')}
                             type="text"
                             name="nombre"
                             required
@@ -131,7 +172,7 @@ const PopUpLive = () => {
                         <TextFieldP
                             margin="dense"
                             id="v_apellido"
-                            label="Apellido"
+                            label={t('Live.PopUp.Apellido')}
                             type="text"
                             name="apellido"
                             required
@@ -144,23 +185,30 @@ const PopUpLive = () => {
                             margin="dense"
                             name="email"
                             id="v_email"
-                            label="Email"
+                            label={t('Live.PopUp.Email')}
                             type="email"
                             fullWidth
                             value={suscriptor.email}
                             onChange={(e) => handleChange(e)}
                         />
                         <AcaBoton>
-                            <BotonButton type="submit" texto="Suscribirme" color={true} />
+                            <BotonButton type="submit" texto={t('Live.PopUp.Boton')} color={true} />
                             {error ? <Perror>{error}</Perror> : null}
                         </AcaBoton>
                     </form>
                 </ColumnaIzquierda>
                 <ColumnaDerecha sm={5}>
+                    {
+                        (ancho === true) ? (
+                            <IconButtonP onClick={() => cerrarPopUp()}>
+                                <img src="/img/cruz_blanca.png" alt="Cerrar newsletter Live BAIFFF" />
+                            </IconButtonP>
+                        ) : null
+                    }
                 </ColumnaDerecha>
             </Row>
       </DialogP>
     );
 }
  
-export default PopUpLive;
+export default withTranslation('live')(PopUpLive);

@@ -8,6 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import clienteAxios from '../config/axios';
+import { withTranslation } from '../i18n';
 
 const Contenedor = styled(Container)`
     padding: 5rem 0 3rem 0;
@@ -125,7 +126,7 @@ const ATerminos  = styled.a`
     }
 `;
 
-const Inscripcion = () => {
+const Inscripcion = ({t}) => {
     const [ tyc, setTyc ] = useState(false);
     const [ enviado, setEnviado ] = useState(null);
     const [ open, setOpen ] = useState(false);
@@ -194,7 +195,7 @@ const Inscripcion = () => {
                 (formulario.i_telefono).trim() === '' ||
                 (formulario.i_email).trim() === '' ||
                 (formulario.i_cargo).trim() === '') {
-                setError('Todos los campos son obligatorios');
+                setError(t('Inscripcion.Errores.Campos'));
             } else {
                 setError(null);
                 nuevaEtapa = etapa + 1;
@@ -208,7 +209,7 @@ const Inscripcion = () => {
                 // (formulario.d_facebook).trim() === '' ||
                 // (formulario.d_instagram).trim() === '' ||
                 (formulario.d_email).trim() === '') {
-                setError('Todos los campos son obligatorios');    
+                setError(t('Inscripcion.Errores.Campos'));    
             } else {
                 setError(null);
                 nuevaEtapa = etapa + 1;
@@ -232,14 +233,13 @@ const Inscripcion = () => {
             (formulario.link).trim() === '' ||
             // (formulario.pass).trim() === '' || 
             (formulario.pais).trim() === '') {
-                setError('Todos los campos son obligatorios'); 
+                setError(t('Inscripcion.Errores.Campos')); 
                 setTimeout(() => {
                     setError(null);
                 }, 3000);  
         } else {
-            console.log('tyc ', tyc);
             if(tyc === false) {
-                setError('Los términos y condiciones son obligatorios');
+                setError(t('Inscripcion.Errores.Terminos'));
                 setTimeout(() => {
                     setError(null);
                 }, 4000);
@@ -247,7 +247,6 @@ const Inscripcion = () => {
                 try {
                     // Enviar form
                     const enviarForm = await clienteAxios.post('/api/films/', formulario);
-                    console.log(enviarForm);
 
                     // Avisar que se envio el form
                     setOpen(true);
@@ -258,14 +257,13 @@ const Inscripcion = () => {
                     // Enviado
                     setEnviado(true);
                 } catch (error) {
-                    console.log(error);
+                    
                 }
             }    
         }
     }
 
     const inscribirOtro = () => {
-        console.log('inscribirOtro');
         setEtapa(1);
         setEnviado(null);
         setTyc(false);
@@ -286,12 +284,12 @@ const Inscripcion = () => {
     }
 
     const labelCheckTerminos = <p className="m-0">
-        He leído y acepto los <ATerminos href="/terms/BASES_Y_CONDICIONES_BAIFFF2020.pdf" target="_blank">términos y condiciones.</ATerminos>
+        {t('Inscripcion.TYC.Texto')} <ATerminos href={`/terms/${t('Inscripcion.TYC.PDF')}`} target="_blank">{t('Inscripcion.TYC.Boton')}</ATerminos>
     </p>; 
 
     return (
         <Contenedor>
-            <TituloSeccion texto={'Inscripción'} tamano={'7.2rem'} />
+            <TituloSeccion texto={t('Inscripcion.Titulo')} tamano={'7.2rem'} />
             <RowPersonalizada>
                 <Col sm={12} md={4}>
                     <Pasos actual={etapa} />
@@ -304,28 +302,28 @@ const Inscripcion = () => {
                             (etapa === 1) ? (
                                 <Row>
                                     <Col sm={6}>
-                                        <TextField value={formulario.i_nombre} type="text" required placeholder="Nombre y apellido" name="i_nombre" onChange={(e) => handleChange(e)} />
-                                        <TextField value={formulario.i_telefono} type="number" required placeholder="Teléfono" name="i_telefono" onChange={(e) => handleChange(e)} />
-                                        <TextField value={formulario.i_email} type="email" required placeholder="Email" name="i_email" onChange={(e) => handleChange(e)} />
-                                        <TextField value={formulario.i_cargo} type="text" required placeholder="Cargo dentro del film" name="i_cargo" onChange={(e) => handleChange(e)} />
+                                        <TextField value={formulario.i_nombre} type="text" required placeholder={t('Inscripcion.E1.Nombre')} name="i_nombre" onChange={(e) => handleChange(e)} />
+                                        <TextField value={formulario.i_telefono} type="tel" required placeholder={t('Inscripcion.E1.Tel')} name="i_telefono" onChange={(e) => handleChange(e)} />
+                                        <TextField value={formulario.i_email} type="email" required placeholder={t('Inscripcion.E1.Email')} name="i_email" onChange={(e) => handleChange(e)} />
+                                        <TextField value={formulario.i_cargo} type="text" required placeholder={t('Inscripcion.E1.Cargo')} name="i_cargo" onChange={(e) => handleChange(e)} />
                                     </Col>
                                 </Row>
                             ) : (
                                 (etapa === 2) ? (
                                     <Row>
                                         <Col>
-                                            <TextField value={formulario.d_nombre} type="text" required placeholder="Nombre y apellido" name="d_nombre" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder="Fecha de nacimiento" name="d_nacimiento" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.d_nacionalidad} type="text" required placeholder="Nacionalidad" name="d_nacionalidad" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.d_nombre} type="text" required placeholder={t('Inscripcion.E2.Nombre')} name="d_nombre" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder={t('Inscripcion.E2.Nac')} name="d_nacimiento" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.d_nacionalidad} type="text" required placeholder={t('Inscripcion.E2.Nacion')} name="d_nacionalidad" onChange={(e) => handleChange(e)} />
                                             <SelectP
                                                 onChange={(e) => handleChange(e)}
                                                 name="d_tipo"
                                                 required
                                                 value={formulario.d_tipo}
                                             >
-                                            <option selected disabled value="">Tipo de artista</option>
-                                            <option value="Profesional">Profesional</option>
-                                            <option value="Independiente">Independiente</option>
+                                            <option selected disabled value="">{t('Inscripcion.E2.Tipo')}</option>
+                                            <option value="Profesional">{t('Inscripcion.E2.Tipos.Pro')}</option>
+                                            <option value="Independiente">{t('Inscripcion.E2.Tipos.Ind')}</option>
                                             </SelectP>
                                         </Col>
                                         <Col>
@@ -338,7 +336,7 @@ const Inscripcion = () => {
                                 ) : (
                                     <Row>
                                         <Col>
-                                            <TextField value={formulario.nombre} type="text" required placeholder="Nombre del Film" name="nombre" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.nombre} type="text" required placeholder={t('Inscripcion.E3.Nombre')} name="nombre" onChange={(e) => handleChange(e)} />
 
                                             <SelectP
                                                 onChange={(e) => handleChange(e)}
@@ -346,10 +344,10 @@ const Inscripcion = () => {
                                                 name="tipo"
                                                 value={formulario.tipo}
                                             >
-                                            <option selected disabled value="">Tipo de film</option>
-                                            <option value="Fashion Film">Fashion Film</option>
-                                            <option value="Videoclip">Videoclip</option>
-                                            <option value="Contenido Digital Corto">Contenido Digital Corto</option>
+                                            <option selected disabled value="">{t('Inscripcion.E3.Tipo')}</option>
+                                            <option value="Fashion Film">{t('Inscripcion.E3.TiposOpciones.Fashion')}</option>
+                                            <option value="Videoclip">{t('Inscripcion.E3.TiposOpciones.Viceoclip')}</option>
+                                            <option value="Contenido Digital Corto">{t('Inscripcion.E3.TiposOpciones.Corto')}</option>
                                             </SelectP>
 
                                             <SelectP
@@ -358,11 +356,11 @@ const Inscripcion = () => {
                                                 name="musica"
                                                 value={formulario.musica}
                                             >
-                                            <option selected disabled value="">Música original</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
+                                            <option selected disabled value="">{t('Inscripcion.E3.Musica')}</option>
+                                            <option value="Si">{t('Inscripcion.E3.MusicaOpciones.Si')}</option>
+                                            <option value="No">{t('Inscripcion.E3.MusicaOpciones.No')}</option>
                                             </SelectP>
-                                            <TextField value={formulario.pais} type="text" required placeholder="País" name="pais" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.pais} type="text" required placeholder={t('Inscripcion.E3.Pais')} name="pais" onChange={(e) => handleChange(e)} />
                                             <FormControlLabel
                                                 value="terminos"
                                                 control={<Checkbox
@@ -380,25 +378,25 @@ const Inscripcion = () => {
                                                 required
                                                 name="publicitario"
                                             >
-                                            <option selected disabled value="">Fines del Film</option>
-                                            <option value="Artistico">Artísticos</option>
-                                            <option value="publicitario">Publicitarios</option>
+                                            <option selected disabled value="">{t('Inscripcion.E3.Fin')}</option>
+                                            <option value="Artistico">{t('Inscripcion.E3.FinesOpciones.Art')}</option>
+                                            <option value="publicitario">{t('Inscripcion.E3.FinesOpciones.Pub')}</option>
                                             </SelectP>
                                             {
                                                 (publicitario === 'publicitario') ? (
-                                                    <TextField value={formulario.fin} type="text" placeholder="Marca" name="fin" onChange={(e) => handleChange(e)} />
+                                                    <TextField value={formulario.fin} type="text" placeholder={t('Inscripcion.E3.Marca')} name="fin" onChange={(e) => handleChange(e)} />
                                                 ) : null
                                             }
                                             <Row>
                                                 <Col>
-                                                    <TextField value={formulario.year} type="text" placeholder="Año de estreno" name="year" onChange={(e) => handleChange(e)} />
+                                                    <TextField value={formulario.year} type="text" placeholder={t('Inscripcion.E3.Ano')} name="year" onChange={(e) => handleChange(e)} />
                                                 </Col>
                                                 <Col>
-                                                    <TextField value={formulario.duracion} type="text" placeholder="Duracion" name="duracion" onChange={(e) => handleChange(e)} />
+                                                    <TextField value={formulario.duracion} type="text" placeholder={t('Inscripcion.E3.Dura')} name="duracion" onChange={(e) => handleChange(e)} />
                                                 </Col>
                                             </Row>
-                                            <TextField value={formulario.link} type="text" required placeholder="Link" name="link" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.pass} type="text" placeholder="Contraseña" name="pass" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.link} type="text" required placeholder={t('Inscripcion.E3.Link')}name="link" onChange={(e) => handleChange(e)} />
+                                            <TextField value={formulario.pass} type="text" placeholder={t('Inscripcion.E3.Pass')} name="pass" onChange={(e) => handleChange(e)} />
                                         </Col>
                                     </Row>
                                 )
@@ -412,12 +410,12 @@ const Inscripcion = () => {
                                         <BotonBlanco
                                             type="button"
                                             onClick={() => inscribirOtro()}
-                                        >Publicar otro film</BotonBlanco>
+                                        >{t('Inscripcion.Botones.Otra')}</BotonBlanco>
                                         ) : (
                                             <ContenedorBoton>
                                                 <BotonUI
                                                     type="submit"
-                                                >Enviar Inscripción</BotonUI>
+                                                >{t('Inscripcion.Botones.Enviar')}</BotonUI>
                                                 {error ? <MensajeError>{error}</MensajeError> : null}
                                             </ContenedorBoton>
                                         )
@@ -428,14 +426,14 @@ const Inscripcion = () => {
                                     <BotonUI
                                         type="button"
                                         onClick={() => cambiarEtapa()}
-                                    >Siguiente ❯</BotonUI>
+                                    >{t('Inscripcion.Adicionales.Siguiente')} ❯</BotonUI>
                                     {error ? <MensajeError>{error}</MensajeError> : null}
                                 </ContenedorBoton>
                             )
                         }
                         <Snackbar open={open} autoHideDuration={4000}>
                             <MuiAlertP severity="success">
-                            Film inscripto con éxito
+                            {t('Inscripcion.Adicionales.Exito')}
                             </MuiAlertP>
                         </Snackbar>
                     </form>
@@ -445,4 +443,4 @@ const Inscripcion = () => {
     );
 }
  
-export default Inscripcion;
+export default withTranslation('inscripcion')(Inscripcion);

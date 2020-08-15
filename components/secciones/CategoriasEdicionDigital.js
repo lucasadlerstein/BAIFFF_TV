@@ -4,6 +4,8 @@ import TituloSeccion from '../ui/TituloSeccion';
 import styled from '@emotion/styled';
 import CategoriaIndividual from './CategoriaIndividual';
 
+import {withTranslation} from '../../i18n';
+
 const Contenedor = styled(Container)`
     padding-top: 8rem;
     padding-bottom: 5rem;
@@ -21,36 +23,36 @@ const RowP = styled(Row)`
     padding-top: 6rem;
 `;
 
-const CategoriasEdicionDigital = () => {
+const CategoriasEdicionDigital = ({t}) => {
     return (
         <Contenedor>
             <TituloSeccion texto="Categorías" color={false} tamano={'7rem'} />
             <RowP>
                 <Col sm={12} lg={5}>
                     <Lista>
-                        <CategoriaIndividual categoria={'Mejor fashion film nacional'} />
-                        <CategoriaIndividual categoria={'Mejor fashion film internacional'} />
-                        <CategoriaIndividual categoria={'Mejor fashion film emergente'} />
-                        <CategoriaIndividual categoria={'Mejor videoclip'} />
-                        <CategoriaIndividual categoria={'Mejor contenido digital corto'} />
+                        <CategoriaIndividual categoria={t('Categorias.1')} />
+                        <CategoriaIndividual categoria={t('Categorias.2')} />
+                        <CategoriaIndividual categoria={t('Categorias.3')} />
+                        <CategoriaIndividual categoria={t('Categorias.4')} />
+                        <CategoriaIndividual categoria={t('Categorias.5')} />
                     </Lista>
                 </Col>
                 <Col sm={12} lg={4}>
-                    <CategoriaIndividual categoria={'Mejor film experimental'} />
-                    <CategoriaIndividual categoria={'Premio del público'} />
-                    <CategoriaIndividual categoria={'Mejor idea'} />
-                    <CategoriaIndividual categoria={'Mejor performance'} />
-                    <CategoriaIndividual categoria={'Mejor cinematografía'} />                    
+                        <CategoriaIndividual categoria={t('Categorias.6')} />
+                        <CategoriaIndividual categoria={t('Categorias.7')} />
+                        <CategoriaIndividual categoria={t('Categorias.8')} />
+                        <CategoriaIndividual categoria={t('Categorias.9')} />
+                        <CategoriaIndividual categoria={t('Categorias.10')} />
                 </Col>
                 <Col sm={12} lg={3}>
-                    <CategoriaIndividual categoria={'Mejor dirección de arte'} />
-                    <CategoriaIndividual categoria={'Mejor estilismo'} />
-                    <CategoriaIndividual categoria={'Mejor Makeup & Hair'} />
-                    <CategoriaIndividual categoria={'Mejor música original'} />
+                        <CategoriaIndividual categoria={t('Categorias.11')} />
+                        <CategoriaIndividual categoria={t('Categorias.12')} />
+                        <CategoriaIndividual categoria={t('Categorias.13')} />
+                        <CategoriaIndividual categoria={t('Categorias.14')} />
                 </Col>
             </RowP>
         </Contenedor>
     );
 }
  
-export default CategoriasEdicionDigital;
+export default withTranslation('edicion-digital')(CategoriasEdicionDigital);

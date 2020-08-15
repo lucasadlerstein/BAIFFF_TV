@@ -3,7 +3,7 @@ import { Parallax } from 'react-parallax';
 import styled from '@emotion/styled';
 
 const DivP = styled.div`
-    height: 15rem;
+    height: 10rem;
     @media (min-width: 768px){
         height: 35rem;
     }
@@ -28,7 +28,7 @@ const ImagenParallax = ({imagen, nombre}) => {
             <Parallax
                 bgImage={imagen}
                 bgImageAlt={nombre}
-                strength={ancho ? 200 : 30 }
+                strength={ancho ? 200 : 50 }
             >   
                 <DivP />
             </Parallax>

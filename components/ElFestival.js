@@ -10,7 +10,8 @@ const Izquierda = styled.div`
         color: #FF0000;
         font-family: 'MonumentExtended';
         line-height: 60px;
-        font-size: 3rem;
+        /* font-size: 3rem; */
+        font-size: 2.6rem;
         text-transform: uppercase;
     }
     p {
@@ -28,7 +29,7 @@ const Izquierda = styled.div`
     }
     @media (min-width: 540px){
         h2 {
-            font-size: 5rem;
+            font-size: 4.2rem;
             text-align: left;
         }
     }
@@ -43,17 +44,17 @@ const Izquierda = styled.div`
     }
     @media (min-width: 991px){
         h2 {
-            font-size: 5rem;
+            font-size: 4.5rem;
         }
     }
     @media (min-width: 1150px){
         h2 {
-            font-size: 6rem;
+            font-size: 5.4rem;
         }
     }
     @media (min-width: 1280px){
         h2 {
-            font-size: 6.5rem;
+            font-size: 6rem;
         }
     }
     @media (min-width: 1395px){
@@ -61,7 +62,7 @@ const Izquierda = styled.div`
         max-width: 85%;
             margin: 0 auto;
         h2 {
-            font-size: 7.2rem;
+            font-size: 6rem;
         }
     }
     
@@ -129,7 +130,8 @@ const Cartel = styled.h4`
     text-align:center;
     line-height: 40px;
     text-transform: uppercase;
-    padding: 4rem 3rem 4rem calc(3rem + 15px);
+    padding: 4rem 3rem;
+    /* // ! padding: 4rem 3rem 4rem calc(3rem + 15px); */
     margin: 0;
     span {
         margin-top: 1rem;
@@ -200,40 +202,41 @@ const ContenidoIzq = styled.div`
     }
 `;
 
-const ElFestival = () => {
+import { withTranslation } from '../i18n';
+
+const ElFestival = ({t}) => {
     return ( 
         <RowP>
             <Columna sm={12} lg={7}>
                 <Izquierda>
                     <ContenidoIzq>
-                        <h2>El festival</h2>
-                        <p>
-                            En un momento como el que estamos viviendo, debemos estar más presentes que nunca para apoyarnos entre toda la comunidad de artistas, realizadores audiovisuales y diseñadores de moda. Por esta razón la edición de BAIFFF 2020 no se detiene y se hará de forma on line. Continuaremos con la labor de convocar, promocionar y premiar a los mejores profesionales de la industria en 12 categorías:
-                        </p>
+                        <h2>{t('ElFestival.Titulo')}</h2>
+                        <p>{t('ElFestival.Texto')}</p>
                         <Lista>
-                            <li>Mejor Fashion Film Nacional | Internacional | Emergente</li>
-                            <li>Mejor videoclip</li>
-                            <li>Mejor contenido digital corto</li>
-                            <li>Mejor film experimental</li>
-                            <li>Premio del público</li>
-                            <li>Mejor idea</li>
-                            <li>Mejor performance</li>
-                            <li>Mejor cinematografía</li>
-                            <li>Mejor dirección de arte</li>
-                            <li>Mejor estilismo</li>
-                            <li>Mejor makeup & hair</li>
-                            <li>Mejor música original</li>
+                            <li>{t('ElFestival.Categorias.1')}</li>
+                            <li>{t('ElFestival.Categorias.2')}</li>
+                            <li>{t('ElFestival.Categorias.3')}</li>
+                            <li>{t('ElFestival.Categorias.4')}</li>
+                            <li>{t('ElFestival.Categorias.5')}</li>
+                            <li>{t('ElFestival.Categorias.6')}</li>
+                            <li>{t('ElFestival.Categorias.7')}</li>
+                            <li>{t('ElFestival.Categorias.8')}</li>
+                            <li>{t('ElFestival.Categorias.9')}</li>
+                            <li>{t('ElFestival.Categorias.10')}</li>
+                            <li>{t('ElFestival.Categorias.11')}</li>
+                            <li>{t('ElFestival.Categorias.12')}</li>
+
                         </Lista>
                         <Botones>
                             <Boton
                                 color={true}
-                                texto={'Más info'}
+                                texto={t('ElFestival.btnMasInfo')}
                                 destino={'/edicion-digital'}
                                 mr={'3rem'}
                             />
                             <Boton
                                 color={true}
-                                texto={'Juradxs'}
+                                texto={t('ElFestival.btnJuradxs')}
                                 destino={'edicion-digital#juradxs'}
                             />
                         </Botones>
@@ -245,7 +248,7 @@ const ElFestival = () => {
                     <RowP>
                         <Columna xs={{size: 12, order: 'last'}}>
                             <Cartel>
-                                Primer festival <span>latinoamericano de fashion films</span>
+                            {t('ElFestival.CartelRojoTitulo')} <span>{t('ElFestival.CartelRojoSubtitulo')}</span>
                             </Cartel>
                         </Columna>
                         <Columna xs={{size: 12, order: 'first'}}>
@@ -258,4 +261,4 @@ const ElFestival = () => {
     );
 }
  
-export default ElFestival;
+export default withTranslation('inicio')(ElFestival);

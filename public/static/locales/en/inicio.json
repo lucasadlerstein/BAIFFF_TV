@@ -1,0 +1,53 @@
+{
+    "Inicio": {
+        "Septiembre": "September 2020"
+    },
+    "Separadores": {
+        "1": "Separador Uno",
+        "2": "Separador Dos",
+        "3": "Separador Tres",
+        "4": "Separador Cuatro"
+    },
+    "Nosotros": {
+        "Titulo": "About",
+        "Contenido1": "We are a festival that promotes the interaction between ",
+        "ContenidoBold2": "FASHION, CINEMA, VISUAL ARTS, MUSIC, TECHNOLOGY and ADVERTISING.",
+        "Contenido3": " We invite, promote and reward the work of filmmakers, fashion designers, musicians, influencers and brands, in a creative, diverse, inclusive and cultural space.",
+        "Boton": "Read more",
+        "Top": "TOP 5",
+        "TopContenido1": "Fashion film festivals", 
+        "TopContenido2": "Selected by forbes",
+        "TopContenido3": "International"
+    },
+    "ElFestival": {
+        "Titulo": "The Festival",
+        "Texto": "In a difficult moment like this one, we want to be more present than ever to support the whole community of artists, filmmakers and fashion designers. For this reason the BAIFFF 2020 edition does not stop and will be held online. We will continue with the work of calling, promoting and rewarding the best professionals in the industry in 12 categories:",
+        "Categorias": {
+            "1": "Best Fashion Film National |  International | New Artist",
+            "2": "Best Music Video",
+            "3": "Best Short Digital Content",
+            "4": "Best Experimental Film",
+            "5": "Audience Award",
+            "6": "Best Idea",
+            "7": "Best Performance",
+            "8": "Best Cinematography",
+            "9": "Best Art Direction",
+            "10": "Best Stylist",
+            "11": "Best Makeup & Hair",
+            "12": "Best Original Music"
+        },
+        "btnMasInfo": "More info",
+        "btnJuradxs": "Jury",
+        "CartelRojoTitulo": "First latin american",
+        "CartelRojoSubtitulo": "fashion film festival"
+    },
+    "Sponsors": {
+        "Titulo": "Sponsors",
+        "Aliados": {
+            "1": "Aliado",
+            "2": "Aliado",
+            "3": "Aliado",
+            "4": "Aliado"
+        }
+    }
+}

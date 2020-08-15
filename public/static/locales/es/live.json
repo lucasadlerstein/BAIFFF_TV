@@ -1,0 +1,15 @@
+{
+    "Live": {
+        "TituloA": "BAIFFF 2020",
+        "TituloB": "en Vivo!",
+        "YT": "Seguir en YouTube",
+        "PopUp": {
+            "Titulo": "¡Suscribite a BAIFFF!",
+            "Nombre": "Nombre",
+            "Apellido": "Apellido",
+            "Email": "Email",
+            "Boton": "Suscribirme",
+            "Error": "Todos los campos son obligatorios"
+        }
+    }
+}

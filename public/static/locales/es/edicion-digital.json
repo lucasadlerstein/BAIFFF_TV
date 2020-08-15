@@ -1,0 +1,46 @@
+{
+    "Edicion": {
+        "Titulo": "BAIFFF 2020 Digital",
+        "Texto": {
+            "1a": "BAIFFF 2020 Edición Digital ",
+            "1b": "es una expansión del festival al modo on line. El público podrá disfrutar de las experiencia BAIFFF en primera fila, desde donde quieran y en cualquier parte del mundo.",
+            "2": "Como todos los años tendremos proyecciones de los films en competencia, charlas con destacados representantes de la mundo del fashion film international, performances artísticas, proyecciones curadas por invitados internacionales, música en vivo, exposición de fotos de moda y muchas más actividades.",
+            "3": "Este año tenemos 3 nuevas categorías:",
+            "NewCat": {
+                "1": "Mejor videoclip",
+                "2": "Mejor contenido digital corto",
+                "3": "Mejor film experimental"
+            },
+            "4": "Estas piezas deben destacar por su valor Estético/Visual relacionado con Moda, Lifestyle y/o Belleza [ Estilismo, Maquillaje, Pelo, Vestuario o Accesorios ].",
+            "5": "El público podrá participar votando por sus films favoritos a través de nuestras redes sociales.",
+            "6": "Seguinos y está atento a las novedades a través de nuestras redes."
+        },
+        "Cartel": {
+            "Titulo": "¡Este año",
+            "Subtitulo": "BAIFFF lo vivís desde donde estés!"
+        }
+    },
+    "Categorias": {
+        "1": "Mejor fashion film nacional",
+        "2": "Mejor fashion film internacional",
+        "3": "Mejor fashion film emergente",
+        "4": "Mejor videoclip",
+        "5": "Mejor contenido digital corto",
+        "6": "Mejor film experimental",
+        "7": "Premio del público",
+        "8": "Mejor idea",
+        "9": "Mejor performance",
+        "10": "Mejor cinematografía",
+        "11": "Mejor dirección de arte",
+        "12": "Mejor estilismo",
+        "13": "Mejor Makeup & Hair",
+        "14": "Mejor Música Original"
+    },
+    "Juradxs": {
+        "Titulo": "Juradxs",
+        "Roles": {
+            "Directora": "Directora",
+            "Director": "Director"
+        }
+    }
+}

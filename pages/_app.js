@@ -1,6 +1,10 @@
+import App from 'next/app';
+
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createGlobalStyle } from "styled-components";
+
+import { appWithTranslation } from '../i18n'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -24,8 +28,6 @@ const GlobalStyle = createGlobalStyle`
       src: url('/fonts/Ralway-Bold.ttf');
   }
 
-
-
   h1, h2, h3, h4 {
     font-family: 'MonumentExtended'
   }
@@ -34,13 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const MyApp = ({ Component, pageProps }) => {
-  return (
-    <>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </>
-  )
-}
+const MyApp = ({ Component, pageProps }) => <> <GlobalStyle /> <Component {...pageProps} /> </>
 
-export default MyApp;
+MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) })
+
+export default appWithTranslation(MyApp);

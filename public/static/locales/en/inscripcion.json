@@ -1,0 +1,68 @@
+{
+    "Inscripcion": {
+        "Titulo": "Submissions",
+        "Etapas": {
+            "Uno": "Submission",
+            "Dos": "Director",
+            "Tres": "Film"
+        },
+        "E1": {
+            "Nombre": "Name",
+            "Tel": "Phone",
+            "Email": "Email",
+            "Cargo": "Job Position in the Film"
+        },
+        "E2": {
+            "Nombre": "Name",
+            "Nac": "Birthdate",
+            "Nacion": "Nacionality",
+            "Tipo": "Artist",
+            "Tipos": {
+                "Pro": "Professional",
+                "Ind": "New Talent"
+            }
+        },
+        "E3": {
+            "Nombre": "Film Name",
+            "Tipo": "Type of Film",
+            "Musica": "Original Music",
+            "Pais": "Country",
+            "Fin": "Fines del film",
+            "Marca": "Brand",
+            "Ano": "Year",
+            "Dura": "Time",
+            "Link": "Link",
+            "Pass": "Password",
+            "TiposOpciones": {
+                "Fashion": "Fashion Film",
+                "Videoclip": "Music video",
+                "Corto": "Short Digital Content"
+            },
+            "MusicaOpciones": {
+                "Si": "Yes",
+                "No": "No"
+            },
+            "FinesOpciones": {
+                "Art": "Artistic Film",
+                "Pub": "Advertising"
+            }
+        },
+        "TYC": {
+            "Texto": "I have read and accept the ",
+            "Boton": "Terms and Conditions.",
+            "PDF": "TERMS_AND_CONDITIONS_BAIFFF2020.pdf"
+        },
+        "Errores": {
+            "Campos": "All fields are required",
+            "Terminos": "You must agree to terms and conditions"
+        },
+        "Botones": {
+            "Enviar": "Send submission",
+            "Otra": "Submit another Film"
+        },
+        "Adicionales": {
+            "Exito": "Film submitted successfully",
+            "Siguiente": "Next"
+        }
+    }
+}

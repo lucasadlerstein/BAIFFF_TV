@@ -4,6 +4,8 @@ import TituloSeccion from '../ui/TituloSeccion';
 import EdicionAnterior from './EdicionAnterior';
 import styled from '@emotion/styled';
 
+import { withTranslation } from '../../i18n';
+
 const Contenedor = styled(Container)`
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -20,10 +22,10 @@ const RowP = styled(Row)`
     }
 `;
 
-const EdicionesAnteriores = () => {
+const EdicionesAnteriores = ({t}) => {
     return (
         <Contenedor id="ediciones-anteriores">
-            <TituloSeccion texto={'Ediciones Anteriores'} tamano={'6rem'}/>
+            <TituloSeccion texto={t('EdicionesAnteriores.Titulo')} tamano={'6rem'}/>
             <RowP>
                 <Col sm={12} lg={4}>
                     <EdicionAnterior titulo={'BAIFFF 2015'} imagen={'/img/NOSOTROS/Nosotros_Ediciones_2015.jpg'} link={'/ediciones/2015'} />
@@ -39,4 +41,4 @@ const EdicionesAnteriores = () => {
     );
 }
  
-export default EdicionesAnteriores;
+export default withTranslation('nosotros')(EdicionesAnteriores);

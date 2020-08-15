@@ -1,0 +1,36 @@
+{
+    "Nosotros": {
+        "Titulo": "Nosotrxs",
+        "Texto": {
+            "1a": "Somos un festival internacional que promueve la interacción entre la ",
+            "1b": "moda, el cine, las artes visuales, la música, la tecnología y la publicidad. ",
+            "1c": "Convocamos, promocionamos y premiamos el trabajo de realizadores audiovisuales, diseñadores, fotógrafos, músicos, influencers y marcas, en un espacio creativo, inclusivo y cultural.",
+            "2a": "El mundo digital cambió la manera en la que nos comunicamos. Hoy en día, diseñadores, marcas y artistas, interactúan con su público a través de contenidos audiovisuales de entretenimiento, de alto valor estético y creativo, que conecten con sus valores, gustos y emociones, mediante nuevas plataformas digitales de difusión. ",
+            "2b": " reconoce estos trabajos y destaca el aporte que hacen a la cultura visual de nuestros tiempos.",
+            "3a": "Luego de 3 exitosas ediciones, ",
+            "3b": " se ha convertido en un festival único en su estilo. Seleccionado por la revista ",
+            "3c": ", como uno de los 5 mejores festivales de Fashion Film en el mundo, es un referente internacional en el desarrollo de este género audiovisual."
+        },
+        "Items": {
+            "1": "Moda",
+            "2": "Música",
+            "3": "Cine",
+            "4": "Arte",
+            "5": "Publicidad"
+        }
+    },
+    "Staff": {
+        "Director": "Director",
+        "Productor": "Productor ejecutivo",
+        "GerenteProd": "Gerente de producción y creatividad",
+        "AsistenteProd": "Asistente de producción",
+        "Agencia": "Agencia digital",
+        "Logo": "Diseño de logo",
+        "ContenidoRRSS": "Contenido para RRSS",
+        "DesarrolloWeb": "Agencia de diseño y desarrollo web"
+    },
+    "EdicionesAnteriores": {
+        "Titulo": "Ediciones anteriores",
+        "Boton": "Más info"
+    }
+}

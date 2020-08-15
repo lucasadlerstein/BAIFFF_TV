@@ -6,18 +6,23 @@ import EsteAno from '../components/EsteAno';
 import CategoriasEdicionDigital from '../components/secciones/CategoriasEdicionDigital';
 import Jurados from '../components/secciones/Jurados';
 
+import {withTranslation} from '../i18n';
 
-const EdicionDigital = () => {
+const EdicionDigital = ({t}) => {
     return (
         <Layout>
-            <PortadaSeccion foto={'/img/MASINFO/MasInfo_Header.jpg'} titulo={'Baifff 2020 Digital'} />
+            <PortadaSeccion foto={'/img/MASINFO/MasInfo_Header.jpg'} titulo={t('Edicion.Titulo')} />
             <EsteAno />
-            <ImagenParallax imagen='/img/MASINFO/MasInfo_Divisor_1.jpg' nombre="Agenda BAIFFF 2020" />
+            <ImagenParallax imagen='/img/MASINFO/MasInfo_Divisor_1.jpg' nombre={t('Edicion.Titulo')} />
             <CategoriasEdicionDigital />
-            <ImagenParallax  imagen='/img/MASINFO/MasInfo_Divisor_2.jpg' nombre="Agenda BAIFFF 2020" />
+            <ImagenParallax  imagen='/img/MASINFO/MasInfo_Divisor_2.jpg' nombre={t('Edicion.Titulo')} />
             <Jurados />
         </Layout>
     );
 }
+
+EdicionDigital.getInitialProps = async () => ({
+    namespacesRequired: ['edicion-digital'],
+});
  
-export default EdicionDigital;
+export default withTranslation('edicion-digital')(EdicionDigital);

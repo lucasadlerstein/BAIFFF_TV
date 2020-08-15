@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Boton from './ui/Boton';
 
+import { withTranslation } from '../i18n';
+
 const ContenedorUno = styled.div`
     width: 100%;
     background-color: white;
@@ -31,14 +33,23 @@ const ContenedorUno = styled.div`
             line-height: 30px;
         }
     }
+    @media (min-width: 550px){
+        h4 {
+            font-size: 5.1rem; /* 5rem */
+        }
+        h3 {
+            font-size: 3.2rem; /* 4.4rem */
+            line-height: 50px;
+        }
+    }
     @media (min-width: 768px){
         padding: 3.5rem 5rem;
         /* padding-left: 0; */
         h4 {
-            font-size: 3rem; /* 5rem */
+            font-size: 3.6rem; /* 5rem */
         }
         h3 {
-            font-size: 2rem; /* 4.4rem */
+            font-size: 2.3rem; /* 4.4rem */
             line-height: 50px;
 
         }
@@ -72,7 +83,7 @@ const Mini = styled.span`
         display: none;
     }
     @media (min-width: 768px){
-        font-size: 3rem!important;
+        font-size: 3.5rem!important;
         top: 0;
     }
     @media (min-width: 991px){
@@ -136,7 +147,7 @@ const ContenedorDos = styled.div`
     }
     
     @media (min-width: 768px){
-        padding: 9rem 5rem;
+        padding: 5rem; /* 9rem 5rem */
         text-align: center;
         h2 {
             font-size: 3.2rem;
@@ -158,6 +169,7 @@ const ContenedorDos = styled.div`
         }
     }
     @media (min-width: 991px){
+        padding: 9rem 5rem;
         h2 {
             font-size: 4.5rem;
         }
@@ -179,25 +191,25 @@ const ContenedorDos = styled.div`
     }
 `;
 
-const NosotrosIzquierda = () => {
+const NosotrosIzquierda = ({t}) => {
     return ( 
         <>
             <ContenedorUno>
                 <div>
-                    <h4>23 <Mini>▪</Mini> 24 <Mini>▪</Mini> 25</h4>
-                    <h3>Septiembre 2020</h3>
+                    <h4>24 <Mini>▪</Mini> 25 <Mini>▪</Mini> 26</h4>
+                    <h3>{t('Inicio.Septiembre')}</h3>
                 </div>
             </ContenedorUno>
             <ContenedorDos>
                 <div className="normal">
-                    <h2>Nosotrxs</h2>
+                    <h2>{t('Nosotros.Titulo')}</h2>
                     <p>
-                        Somos un festival internacional que promueve la interacción entre <strong>la moda, el cine, las artes visuales, la música, la tecnología y la publicidad.</strong> Convocamos, promocionamos y premiamos el trabajo de realizadores audiovisuales, diseñadores, fotógrafos, músicos, influencers y marcas, en un espacio creativo, inclusivo y cultural.
+                        {t('Nosotros.Contenido1')}<strong>{t('Nosotros.ContenidoBold2')}</strong> {t('Nosotros.Contenido3')}
                     </p>
                     <div className="botonInfo">
                         <Boton
                             color={false}
-                            texto={"Más info"}
+                            texto={t('Nosotros.Boton')}
                             destino={'/nosotrxs'}
                         />
                     </div>
@@ -208,4 +220,4 @@ const NosotrosIzquierda = () => {
     );
 }
  
-export default NosotrosIzquierda;
+export default withTranslation('inicio')(NosotrosIzquierda);

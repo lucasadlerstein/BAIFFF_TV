@@ -1,0 +1,68 @@
+{
+    "Inscripcion": {
+        "Titulo": "Inscripción",
+        "Etapas": {
+            "Uno": "Inscripción",
+            "Dos": "Director",
+            "Tres": "Film"
+        },
+        "E1": {
+            "Nombre": "Nombre y apellido",
+            "Tel": "Teléfono",
+            "Email": "Email",
+            "Cargo": "Cargo dentro del film"
+        },
+        "E2": {
+            "Nombre": "Nombre y apellido",
+            "Nac": "Fecha de nacimiento",
+            "Nacion": "Nacionalidad",
+            "Tipo": "Tipo de artista",
+            "Tipos": {
+                "Pro": "Profesional",
+                "Ind": "Independiente"
+            }
+        },
+        "E3": {
+            "Nombre": "Films name",
+            "Tipo": "Tipo de film",
+            "Musica": "Música original",
+            "Pais": "País",
+            "Fin": "Fines del film",
+            "Marca": "Marca",
+            "Ano": "Año de estreno",
+            "Dura": "Duración",
+            "Link": "Link",
+            "Pass": "Contraseña",
+            "TiposOpciones": {
+                "Fashion": "Fashion Film",
+                "Videoclip": "Videoclip",
+                "Corto": "Contenido Digital Corto"
+            },
+            "MusicaOpciones": {
+                "Si": "Si",
+                "No": "No"
+            },
+            "FinesOpciones": {
+                "Art": "Artísticos",
+                "Pub": "Publicitarios"
+            }
+        },
+        "TYC": {
+            "Texto": "He leído y acepto los",
+            "Boton": "Términos y condiciones.",
+            "PDF": "BASES_Y_CONDICIONES_BAIFFF2020.pdf"
+        },
+        "Errores": {
+            "Campos": "Todos los campos son obligatorios",
+            "Terminos": "Debes aceptar los términos y condiciones"
+        },
+        "Botones": {
+            "Enviar": "Enviar inscripción",
+            "Otra": "Inscribir otro film"
+        },
+        "Adicionales": {
+            "Exito": "Film inscripto con éxito",
+            "Siguiente": "Siguiente"
+        }
+    }
+}

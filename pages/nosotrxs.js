@@ -6,10 +6,12 @@ import GaleriaNosotros from '../components/secciones/GaleriaNosotros';
 import Staff from '../components/secciones/Staff';
 import EdicionesAnteriores from '../components/secciones/EdicionesAnteriores';
 
-const Nosotrxs = () => {
+import { withTranslation } from '../i18n';
+
+const Nosotrxs = ({t}) => {
     return ( 
         <Layout>
-            <PortadaSeccion foto={'/img/NOSOTROS/Nosotros_Header.jpg'} titulo={'Nosotrxs'} />
+            <PortadaSeccion foto={'/img/NOSOTROS/Nosotros_Header.jpg'} titulo={t('Nosotros.Titulo')} />
             <NosotrosParteUno />
             <GaleriaNosotros />
             <Staff />
@@ -17,5 +19,9 @@ const Nosotrxs = () => {
         </Layout>
     );
 }
+
+Nosotrxs.getInitialProps = async () => ({
+    namespacesRequired: ['nosotros'],
+});
  
-export default Nosotrxs;
+export default withTranslation('nosotros')(Nosotrxs);

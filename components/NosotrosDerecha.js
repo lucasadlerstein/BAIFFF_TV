@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import { withTranslation } from '../i18n';
+
 const ContenedorTop = styled.div`
     width: 100%;
     background-color: white;
     margin: auto;
     padding: 3.5rem 2rem;
     text-align:center;
+    align-items: center;
 `;
 const Top5 = styled.p`
     font-family: 'MonumentExtended';
@@ -33,17 +36,17 @@ const SubTop5 = styled.h4`
 
 `;
 
-const NosotrosDerecha = () => {
+const NosotrosDerecha = ({t}) => {
     return ( 
         <>
             <img src="/img/HOME/Home_1.jpg" />
             <ContenedorTop>
-                <Top5>Top 5</Top5>
-                <SubTop5>Fashion film festivals<br/>por forbes<br/>international</SubTop5>
+                <Top5>{t('Nosotros.Top')}</Top5>
+                <SubTop5>{t('Nosotros.TopContenido1')}<br/>{t('Nosotros.TopContenido2')}<br/>{t('Nosotros.TopContenido3')}</SubTop5>
             </ContenedorTop>
             
         </>
      );
 }
  
-export default NosotrosDerecha;
+export default withTranslation('inicio')(NosotrosDerecha);

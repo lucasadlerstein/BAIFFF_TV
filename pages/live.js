@@ -4,6 +4,8 @@ import {Container, Col, Row} from 'reactstrap';
 import styled from '@emotion/styled';
 import PopUpLive from '../components/PopUpLive';
 
+import {withTranslation} from '../i18n';
+
 const Contenedor = styled(Container)`
     padding: 4rem 0 2rem;
     margin: 0 auto;
@@ -94,17 +96,17 @@ const RowP = styled(Row)`
     }
 `;
 
-const Index = () => {
+const Index = ({t}) => {
     return ( 
         <Layout>
             <Contenedor>
                 <RowP>
                     <Col>
-                        <h1>Baiff 2020<br/>en vivo!</h1>
+                        <h1>{t('Live.TituloA')}<br/>{t('Live.TituloB')}</h1>
                     </Col>
                     <Col lg={4}>
                         <DivBoton>
-                            <BotonUI className="noMobile" href="https://www.youtube.com/watch?v=wHn1_QVoXGM" target="_blank">Seguir en YouTube</BotonUI>
+                            <BotonUI className="noMobile" href="https://www.youtube.com/watch?v=wHn1_QVoXGM" target="_blank">{t('Live.YT')}</BotonUI>
                         </DivBoton>
                     </Col>
                 </RowP>
@@ -112,12 +114,16 @@ const Index = () => {
                     <YT src="https://www.youtube.com/embed/wHn1_QVoXGM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></YT>
                 </Caja>
                 <DivBoton>
-                    <BotonMobile className="noDesktop" href="https://www.youtube.com/watch?v=wHn1_QVoXGM" target="_blank">Seguir en YouTube</BotonMobile>
+                    <BotonMobile className="noDesktop" href="https://www.youtube.com/watch?v=wHn1_QVoXGM" target="_blank">{t('Live.YT')}</BotonMobile>
                 </DivBoton>
             </Contenedor>
             <PopUpLive/>
         </Layout>
     );
 }
+
+Index.getInitialProps = async () => ({
+    namespacesRequired: ['live'],
+});
  
-export default Index;
+export default withTranslation('live')(Index);

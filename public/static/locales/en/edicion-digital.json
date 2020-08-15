@@ -1,0 +1,46 @@
+{
+    "Edicion": {
+        "Titulo": "BAIFFF 2020 Digital",
+        "Texto": {
+            "1a": "BAIFFF 2020 Digital Edition ",
+            "1b": "is an expansion of the festival into online mode. The audience will be able to enjoy the BAIFFF experience in the front row, from wherever they want and anywhere in the world.",
+            "2": "As every year we will have screenings of the competing films, talks with prominent representatives of the international industry, artistic performances, screenings curated by international guests, live music, fashion photo exhibition and many more activities.",
+            "3": "This year we have 3 new categories:",
+            "NewCat": {
+                "1": "Best music video",
+                "2": "Best Experimental film",
+                "3": "Best short digital content"
+            },
+            "4": "These pieces must stand out for their Aesthetic/Visual value related to Fashion, Lifestyle or Beauty [ Styling, Make-up, Hair, Wardrobe or Accessories ].",
+            "5": "The public can participate by voting for their favorite films through our social networks.",
+            "6": "Follow us and be aware of the news through our networks."
+        },
+        "Cartel": {
+            "Titulo": "This year",
+            "Subtitulo": "you can experience BAIFFF from wherever you are."
+        }
+    },
+    "Categorias": {
+        "1": "Best Fashion Film National",
+        "2": "Best Fashion Film internacional",
+        "3": "Best Fashion Film New Artist",
+        "4": "Best Music Video",
+        "5": "Best Short Digital Content",
+        "6": "Best Experimental Film",
+        "7": "Audience Award",
+        "8": "Best Idea",
+        "9": "Best Performance",
+        "10": "Best Cinematography",
+        "11": "Best Art Direction",
+        "12": "Best Stylist",
+        "13": "Best Makeup & Hair",
+        "14": "Best Original Music"
+    },
+    "Juradxs": {
+        "Titulo": "Jury",
+        "Roles": {
+            "Directora": "Director",
+            "Director": "Director"
+        }
+    }
+}

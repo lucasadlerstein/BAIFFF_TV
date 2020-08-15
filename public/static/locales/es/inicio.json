@@ -1,0 +1,53 @@
+{
+    "Inicio": {
+        "Septiembre": "Septiembre 2020"
+    },
+    "Separadores": {
+        "1": "Separador Uno",
+        "2": "Separador Dos",
+        "3": "Separador Tres",
+        "4": "Separador Cuatro"
+    },
+    "Nosotros": {
+        "Titulo": "Nosotrxs",
+        "Contenido1": "Somos un festival internacional que promueve la interacción entre ",
+        "ContenidoBold2": "la MODA, el CINE, las ARTES VISUALES, la MÚSICA, la TECNOLOGÍA y la PUBLICIDAD. ",
+        "Contenido3": " Convocamos, promocionamos y premiamos el trabajo de realizadores audiovisuales, diseñadores, fotógrafos, músicos, influencers y marcas, en un espacio creativo, inclusivo y cultural.",
+        "Boton": "Más info",
+        "Top": "TOP 5",
+        "TopContenido1": "Fashion film festivals",
+        "TopContenido2": "Por forbes",
+        "TopContenido3": "International"
+    },
+    "ElFestival": {
+        "Titulo": "El Festival",
+        "Texto": "En un momento como el que estamos viviendo, debemos estar más presentes que nunca para apoyarnos entre toda la comunidad de artistas, realizadores audiovisuales y diseñadores de moda. Por esta razón la edición de BAIFFF 2020 no se detiene y se hará de forma on line. Continuaremos con la labor de convocar, promocionar y premiar a los mejores profesionales de la industria en 12 categorías:",
+        "Categorias": {
+            "1": "MEJOR FASHION FILM NACIONAL | INTERNACIONAL | EMERGENTE",
+            "2": "MEJOR VIDEOCLIP",
+            "3": "MEJOR CONTENIDO DIGITAL CORTO",
+            "4": "MEJOR FILM EXPERIMENTAL",
+            "5": "PREMIO DEL PÚBLICO",
+            "6": "MEJOR IDEA",
+            "7": "MEJOR PERFORMANCE",
+            "8": "MEJOR CINEMATOGRAFÍA",
+            "9": "MEJOR DIRECCIÓN DE ARTE",
+            "10": "MEJOR ESTILISMO",
+            "11": "MEJOR MAKEUP & HAIR",
+            "12": "MEJOR MÚSICA ORIGINAL"
+        },
+        "btnMasInfo": "Más Info",
+        "btnJuradxs": "Juradxs",
+        "CartelRojoTitulo": "Primer festival",
+        "CartelRojoSubtitulo": "Latinoamericano de fashion films"
+    },
+    "Sponsors": {
+        "Titulo": "Sponsors y aliados",
+        "Aliados": {
+            "1": "Aliado",
+            "2": "Aliado",
+            "3": "Aliado",
+            "4": "Aliado"
+        }
+    }
+}
