@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import {Row, Col} from 'reactstrap';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import BotonButton from './ui/BotonButton';
 import styled from '@emotion/styled';
 import IconButton from '@material-ui/core/IconButton';
+import clienteAxios from '../config/axios';
 
 import {withTranslation} from '../i18n';
 
@@ -113,7 +113,7 @@ const PopUpLive = ({t}) => {
         })
     }
 
-    const enviarFormularioSuscripcion = (e) => {
+    const enviarFormularioSuscripcion = async (e) => {
         e.preventDefault();
         if( suscriptor.nombre.trim() === '' ||
             suscriptor.apellido.trim() === '' ||
@@ -125,14 +125,15 @@ const PopUpLive = ({t}) => {
         }, 3000);
 
         // BDD
-        // try {
-            
-        // } catch (error) {
-        //     console.log(error);
-        // }
+        try {
+            const nuevoUsuario = await clienteAxios.post('/api/asistentes', suscriptor);
+            window.localStorage.setItem('suscriptor', suscriptor.nombre);
+
+        } catch (error) {
+            window.localStorage.setItem('suscriptor', 'error');
+        }
 
         // LocalStorage para futuras entradas
-        window.localStorage.setItem('suscriptor', true);
         setPopUp(false);
     }
 

@@ -13,7 +13,7 @@ module.exports = {
       },
     shallowRender: true,
     env: {
-        backendURL: 'http://api.baifff.tv',
+        backendURL: 'https://api.baifff.tv',
         frontendURL: 'http://localhost:3000',
     }
 }

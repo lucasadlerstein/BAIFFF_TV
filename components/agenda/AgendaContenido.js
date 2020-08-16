@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import AbiertoAgenda from './AbiertoAgenda';
 
+import {i18n} from '../../i18n';
+
 const Titulo = styled.h4`
     width: 90%;
     color: black;
@@ -50,7 +52,7 @@ const Flecha = styled.div`
     }
 `;
 
-const AgendaContenido = ({dia, programacion, info, abierto}) => {
+const AgendaContenido = ({info, abierto}) => {
     
     const Contenido = styled.div`
         width: 100%;
@@ -74,7 +76,7 @@ const AgendaContenido = ({dia, programacion, info, abierto}) => {
         <>
             <Contenido>
                 <Titulo>
-                    <span>{dia}</span>{programacion}
+                    <span>{info.hora}</span>{ (i18n.language === 'en') ? info.titulo_en : info.titulo_es }
                 </Titulo>
                 <Flecha>
                     <img src={`/img/AGENDA/${imagen}`} alt="Abrir o cerrar item de la agenda BAIFFF" />

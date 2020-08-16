@@ -2,6 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+import {withTranslation} from '../../i18n';
+
 const AbiertoContenido = styled.div`
     width: 100%;
     border: 3px solid #ff0000;
@@ -19,6 +21,7 @@ const ContenidoIzquierda = styled.div`
         margin-bottom: 3rem;
         font-size: 1.4rem;
         line-height: 27px;
+        white-space: pre-line;
     }
     @media (min-width: 768px){
         padding: 4rem;
@@ -74,10 +77,10 @@ const BotonDU = styled.h6`
     }
 `;
 
-const AbiertoAgenda = ({info}) => {
+const AbiertoAgenda = ({info, t}) => {
 
     const Imagen = styled.div`
-        background-image: ${`url(${info.imagen});`};
+        background-image: ${`url('https://api.baifff.tv/static/${info.imagen}');`};
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -91,35 +94,17 @@ const AbiertoAgenda = ({info}) => {
     return (
         <AbiertoContenido>
             <ContenidoIzquierda>
-                <p>
-                    DOG DAYS by Femke Huurdeman – HOLANDA
-                    <br />EKEKO by Jon Jacobsen – CHILE
-                    <br />LITOST by Gsus Lopez – ESPAÑA
-                    <br />INSPIRACION by Carlos Perez Benito – ARGENTINA
-                    <br />STOP US by Fermín Cimadevilla – FRANCIA
-                    <br />FATAL by alexan sarikamichian – ARGENTINA
-                    <br />KAGURA by Martín Ojeda y Guillermo Montiel – VENEZUELA/ARGENTINA
-                    <br />LONGCHAMP CITY BLOSSOM by Victor Claramunt – ESPAÑA
-                    <br />CRIMSON ROOM by Sebastian Cantillo – ARGENTINA
-                    <br />IN PROGRESS by Celeste Ahumada Maceratta – CHILE
-                    <br />BRUM by Juan Pablo Felix – ARGENTINA
-                    <br />MIDNIGHT WALK by Mathilde Nocquet – AUSTRALIA
-                    <br />GYMNAST by Glen MacKay – GRECIA
-                    <br />THE NEW FACE by Solana Keenan – ARGENTINA
-                    <br />WHISPERING INDIA by GUS&LO – ESPAÑA
-                </p>
+                <p>{info.texto}</p>
                 <Botones>
                     <BotonDU>{info.duracion}</BotonDU>
                     <Link href="/live">
-                        <BotonYT>Ver en vivo</BotonYT>
+                        <BotonYT>{t('Agenda.Ver')}</BotonYT>
                     </Link>
                 </Botones>
             </ContenidoIzquierda>
-            <Imagen>
-
-            </Imagen>
+            <Imagen></Imagen>
         </AbiertoContenido>
     );
 }
  
-export default AbiertoAgenda;
+export default withTranslation('agenda')(AbiertoAgenda);

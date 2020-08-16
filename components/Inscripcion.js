@@ -89,11 +89,10 @@ const BotonUI = styled.button`
 const MensajeError = styled.p`
     color: #ff0000;
     font-size: 1.2rem;
-    text-align: center;
     margin-top: 1rem;
     max-width: 245px;
     @media (max-width: 768px){
-        margin: 1rem auto;
+        margin: 1rem 0;
     }
 `;
 const BotonBlanco = styled(BotonUI)`
@@ -346,7 +345,7 @@ const Inscripcion = ({t}) => {
                                             >
                                             <option selected disabled value="">{t('Inscripcion.E3.Tipo')}</option>
                                             <option value="Fashion Film">{t('Inscripcion.E3.TiposOpciones.Fashion')}</option>
-                                            <option value="Videoclip">{t('Inscripcion.E3.TiposOpciones.Viceoclip')}</option>
+                                            <option value="Videoclip">{t('Inscripcion.E3.TiposOpciones.Videoclip')}</option>
                                             <option value="Contenido Digital Corto">{t('Inscripcion.E3.TiposOpciones.Corto')}</option>
                                             </SelectP>
 

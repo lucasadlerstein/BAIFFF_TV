@@ -23,7 +23,7 @@
             }
         },
         "E3": {
-            "Nombre": "Films name",
+            "Nombre": "Nombre del film",
             "Tipo": "Tipo de film",
             "Musica": "Música original",
             "Pais": "País",

@@ -71,13 +71,37 @@ const AgendaComponente = () => {
     
     const [dia, setDia] = useState(1);
     const [programacion, setProgramacion] = useState(null);
+    const [prog1, setProg1] = useState([]);
+    const [prog2, setProg2] = useState([]);
+    const [prog3, setProg3] = useState([]);
     const [abierto, setAbierto] = useState(null);
 
     useEffect(() => {
         const traerProgramacion = async () => {
             const programacionDB = await clienteAxios.get('/api/programacion');
             setProgramacion(programacionDB.data);
-            console.log(programacionDB.data);
+            let prograUno = (programacionDB.data).filter(programa => programa.dia === 1);
+            let prograDos = (programacionDB.data).filter(programa => programa.dia === 2);
+            let prograTres = (programacionDB.data).filter(programa => programa.dia === 3);
+            prograUno = prograUno.sort(function(a, b){
+                if(a.hora < b.hora) return -1;
+                if(a.hora > b.hora) return 1;
+            });
+            prograDos = prograDos.sort(function(a, b){
+                if(a.hora < b.hora) return -1;
+                if(a.hora > b.hora) return 1;
+            });
+            prograTres = prograTres.sort(function(a, b){
+                if(a.hora < b.hora) return -1;
+                if(a.hora > b.hora) return 1;
+            });
+
+            console.log('Dia 1', prograUno);
+            setProg1(prograUno);
+            console.log('Dia 2', prograDos);
+            setProg2(prograDos);
+            console.log('Dia 3', prograTres);
+            setProg3(prograTres);
         }
         traerProgramacion();
 
@@ -142,19 +166,37 @@ const AgendaComponente = () => {
                 >{fechas[2].fecha}</button>
             </Cabecera>
 
-            <BotonInvisible
-                onClick={() => cambiarVisibilidad(info[0].imagen)}
-            ><AgendaContenido dia={'12.00'} programacion={'Proyeccion Baifff . Parte 1'} info={info[0]} abierto={abierto} /></BotonInvisible>
-            <BotonInvisible
-                onClick={() => cambiarVisibilidad(info[1].imagen)}
-            ><AgendaContenido dia={'13.00'} programacion={'Proyeccion Baifff . Parte 2'} info={info[1]} abierto={abierto} /></BotonInvisible>
-            <BotonInvisible
-                onClick={() => cambiarVisibilidad(info[2].imagen)}
-            ><AgendaContenido dia={'15.00'} programacion={'Comercial IIV'} info={info[2]} abierto={abierto} /></BotonInvisible>
-            <BotonInvisible
-                onClick={() => cambiarVisibilidad(info[3].imagen)}
-            ><AgendaContenido dia={'17.15'} programacion={'Proyeccion Baifff . Parte 4'} info={info[3]} abierto={abierto} /></BotonInvisible>
-
+            {
+                (dia === 1) ? (
+                    prog1.map((evento) => (
+                            <BotonInvisible
+                                onClick={() => cambiarVisibilidad(evento.imagen)}
+                            >
+                                <AgendaContenido info={evento} abierto={abierto} />
+                            </BotonInvisible>
+                    ))
+                ) : (
+                    (dia === 2) ? (
+                        prog2.map((evento) => (
+                            <BotonInvisible
+                                onClick={() => cambiarVisibilidad(evento.imagen)}
+                            >
+                                <AgendaContenido info={evento} abierto={abierto} />
+                            </BotonInvisible>
+                        ))
+                    ) : (
+                        (dia === 3) ? (
+                            prog3.map((evento) => (
+                                <BotonInvisible
+                                    onClick={() => cambiarVisibilidad(evento.imagen)}
+                                >
+                                    <AgendaContenido info={evento} abierto={abierto} />
+                                </BotonInvisible>
+                            ))
+                        ) : null
+                    )
+                )
+            }
         </Contenedor>
     );
 }
