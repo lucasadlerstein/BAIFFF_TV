@@ -34,7 +34,7 @@ const PortadaSeccion = ({foto, titulo}) => {
         }
 
         @media (min-width: 768px){
-            top: 23rem;
+            /* top: 23rem; */
             font-size: 7.2rem;
             text-align: left;
         }
