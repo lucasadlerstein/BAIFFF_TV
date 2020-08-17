@@ -1,5 +1,5 @@
+import React from 'react';
 import App from 'next/app';
-
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createGlobalStyle } from "styled-components";

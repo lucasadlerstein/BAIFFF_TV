@@ -60,7 +60,6 @@ const NavbarTogglerP = styled(NavbarToggler)`
 `;
 
 const Navegacion = ({t}) => {
-
     const [isOpenHoverA, setIsOpenHover] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -98,7 +97,7 @@ const Navegacion = ({t}) => {
                             </NavItem>
                             <UncontrolledDropdown isOpen={isOpenHoverA} onMouseEnter={() => mouseNav(true)} onMouseLeave={() => mouseNav(false)} nav inNavbar id="edicionesNav">
                                 <DropdownToggle nav >
-                                    <a className={`${styles.boton} ${styles.botonediciones}`}>{t('Nav.Ediciones')}</a>
+                                    <a disabled className={`${styles.boton} ${styles.botonediciones}`}>{t('Nav.Ediciones')}</a>
                                 </DropdownToggle>
                                 <DropdownMenuP>
                                     <DropdownItem href="/ediciones/2017" className={`${styles.boton}`}>

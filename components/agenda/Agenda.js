@@ -95,12 +95,8 @@ const AgendaComponente = () => {
                 if(a.hora < b.hora) return -1;
                 if(a.hora > b.hora) return 1;
             });
-
-            console.log('Dia 1', prograUno);
             setProg1(prograUno);
-            console.log('Dia 2', prograDos);
             setProg2(prograDos);
-            console.log('Dia 3', prograTres);
             setProg3(prograTres);
         }
         traerProgramacion();
@@ -171,6 +167,7 @@ const AgendaComponente = () => {
                     prog1.map((evento) => (
                             <BotonInvisible
                                 onClick={() => cambiarVisibilidad(evento.imagen)}
+                                key={evento.id}
                             >
                                 <AgendaContenido info={evento} abierto={abierto} />
                             </BotonInvisible>
@@ -180,6 +177,8 @@ const AgendaComponente = () => {
                         prog2.map((evento) => (
                             <BotonInvisible
                                 onClick={() => cambiarVisibilidad(evento.imagen)}
+                                key={evento.id}
+
                             >
                                 <AgendaContenido info={evento} abierto={abierto} />
                             </BotonInvisible>
@@ -189,6 +188,7 @@ const AgendaComponente = () => {
                             prog3.map((evento) => (
                                 <BotonInvisible
                                     onClick={() => cambiarVisibilidad(evento.imagen)}
+                                    key={evento.id}
                                 >
                                     <AgendaContenido info={evento} abierto={abierto} />
                                 </BotonInvisible>

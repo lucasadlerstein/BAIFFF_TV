@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-import {withTranslation} from '../../i18n';
+import {i18n, withTranslation} from '../../i18n';
 
 const AbiertoContenido = styled.div`
     width: 100%;
@@ -78,7 +78,6 @@ const BotonDU = styled.h6`
 `;
 
 const AbiertoAgenda = ({info, t}) => {
-
     const Imagen = styled.div`
         background-image: ${`url('https://api.baifff.tv/static/${info.imagen}');`};
         background-position: center;
@@ -90,15 +89,14 @@ const AbiertoAgenda = ({info, t}) => {
             width: 36%;
         }
     `;
-
     return (
         <AbiertoContenido>
             <ContenidoIzquierda>
-                <p>{info.texto}</p>
+                <p>{ (i18n.language === 'en') ? info.texto_en : info.texto_es }</p>
                 <Botones>
                     <BotonDU>{info.duracion}</BotonDU>
-                    <Link href="/live">
-                        <BotonYT>{t('Agenda.Ver')}</BotonYT>
+                    <Link href={(info.link !== '') ? `talleres/${info.link}` : '/live'}>
+                        <BotonYT>{(info.boton_es !== '') ? ((i18n.language === 'en') ? info.boton_en : info.boton_es) : t('Agenda.Ver')}</BotonYT>
                     </Link>
                 </Botones>
             </ContenidoIzquierda>

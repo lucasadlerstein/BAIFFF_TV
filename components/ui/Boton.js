@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 const Boton = ({color, texto, destino, mr, anchoMobile}) => {
     const BotonUI = styled.a`
+        text-align: center;
         text-transform: uppercase;
         font-size: 1.8rem;
         padding: 1.5rem 5rem;
