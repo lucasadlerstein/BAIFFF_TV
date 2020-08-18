@@ -191,10 +191,14 @@ const Inscripcion = ({t}) => {
         if (e.target.name === 'publicitario') {
             if (e.target.value === 'publicitario') {
                 setPublicitario('publicitario');
+                setFormulario({
+                    ...formulario,
+                    fin: ''
+                });
             } else if (e.target.value === 'Artistico') {
                 setFormulario({
                     ...formulario,
-                    [e.target.name]: e.target.value
+                    fin: 'artistico'
                 });
                 setPublicitario(null);
             }

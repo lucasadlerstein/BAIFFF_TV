@@ -95,7 +95,7 @@ const AbiertoAgenda = ({info, t}) => {
                 <p>{ (i18n.language === 'en') ? info.texto_en : info.texto_es }</p>
                 <Botones>
                     <BotonDU>{info.duracion}</BotonDU>
-                    <Link href={(info.link !== '') ? `talleres/${info.link}` : '/live'}>
+                    <Link href={(info.link !== '') ? `taller/${info.link}` : '/live'}>
                         <BotonYT>{(info.boton_es !== '') ? ((i18n.language === 'en') ? info.boton_en : info.boton_es) : t('Agenda.Ver')}</BotonYT>
                     </Link>
                 </Botones>
