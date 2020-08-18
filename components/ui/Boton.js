@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-const Boton = ({color, texto, destino, mr, anchoMobile}) => {
+const Boton = ({color, texto, destino, mr, anchoMobile, tblank}) => {
     const BotonUI = styled.a`
         text-align: center;
         text-transform: uppercase;
@@ -37,11 +37,17 @@ const Boton = ({color, texto, destino, mr, anchoMobile}) => {
         <>
             {
                 destino ? (
-                    <Link href={destino}>
-                        <BotonUI>
+                    tblank ? (
+                        <BotonUI href={destino} target="_blank">
                             {texto}
                         </BotonUI>
-                    </Link>
+                    ) : (
+                        <Link href={destino}>
+                            <BotonUI>
+                                {texto}
+                            </BotonUI>
+                        </Link>
+                    )
                 ) : (
                     <BotonUI>
                         {texto}

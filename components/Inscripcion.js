@@ -28,6 +28,7 @@ const TextField = styled.input`
     font-size: 1.8rem;
     line-height: 21px;
     margin-bottom: 3rem;
+    background-color: white;
     
     &::placeholder {
         color: #ff0000;
@@ -48,6 +49,7 @@ const InputMaskP = styled(InputMask)`
     font-size: 1.8rem;
     line-height: 21px;
     margin-bottom: 3rem;
+    background-color: white;
     
     &::placeholder {
         color: #ff0000;
@@ -68,6 +70,7 @@ const SelectP = styled.select`
     font-size: 1.8rem;
     line-height: 21px;
     margin-bottom: 3rem;
+    background-color: white;
     
     &::placeholder {
         color: #ff0000;

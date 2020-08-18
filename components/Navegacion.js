@@ -100,13 +100,13 @@ const Navegacion = ({t}) => {
                                     <a disabled className={`${styles.boton} ${styles.botonediciones}`}>{t('Nav.Ediciones')}</a>
                                 </DropdownToggle>
                                 <DropdownMenuP>
-                                    <DropdownItem href="/ediciones/2017" className={`${styles.boton}`}>
+                                    <DropdownItem target="_blank" href={(i18n.language === 'es') ? "http://ediciones.baifff.tv/index2015.html" : "http://ediciones.baifff.tv/indexENG2015.html"} className={`${styles.boton}`}>
                                     {t('Nav.Edicion15')}
                                     </DropdownItem>
-                                    <DropdownItem href="/ediciones/2016" className={`${styles.boton}`}>
+                                    <DropdownItem target="_blank" href={(i18n.language === 'es') ? "http://ediciones.baifff.tv/index2016.html" : "http://ediciones.baifff.tv/indexENG2016.html"} className={`${styles.boton}`}>
                                     {t('Nav.Edicion16')}
                                     </DropdownItem>
-                                    <DropdownItem href="/ediciones/2015" className={`${styles.boton}`}>
+                                    <DropdownItem target="_blank" href={(i18n.language === 'es') ? "http://ediciones.baifff.tv/index2017.html" : "http://ediciones.baifff.tv/indexENG2017.html"} className={`${styles.boton}`}>
                                     {t('Nav.Edicion17')}
                                     </DropdownItem>
                                 </DropdownMenuP>
