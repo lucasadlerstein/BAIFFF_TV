@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import clienteAxiosIn from '../../config/axiosIn';
+import clienteAxios from '../../config/axios';
 import {useRouter} from 'next/router';
 import {i18n, withTranslation} from '../../i18n';
 import PortadaSeccion from '../../components/secciones/PortadaSeccion';
@@ -9,7 +9,7 @@ import Boton from '../../components/ui/Boton';
 
 // Generar un enlace por cada slug
 export async function getStaticPaths() {
-    const enlaces = await clienteAxiosIn.get('/api/talleres/slugs');
+    const enlaces = await clienteAxios.get('/api/talleres/slugs');
     const paths = enlaces.data.map( enlace => ({
         // Aca va un array con los SLUGS
         params: { enlace: enlace.slug_es }
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
     const {enlace} = params;
-    const resultado = await clienteAxiosIn.get(`/api/talleres/slug/${enlace}`);
+    const resultado = await clienteAxios.get(`/api/talleres/slug/${enlace}`);
 
     return {
         props: {
