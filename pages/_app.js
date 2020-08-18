@@ -1,7 +1,9 @@
 import React from 'react';
 import App from 'next/app';
+import 'react-phone-input-2/lib/bootstrap.css';
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { createGlobalStyle } from "styled-components";
 
 import { appWithTranslation } from '../i18n'

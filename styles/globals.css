@@ -88,3 +88,21 @@ h1, h2, h3, h4 {
 .MuiTypography-body1 {
   font-size: 1.3rem!important;
 }
+
+/* Phone */
+
+.react-tel-input .form-control {
+  width: 100%!important;
+  margin-bottom: 3rem;
+  border: none;
+  border-bottom: 1px solid #ff0000;
+  border-radius: 0px;
+  color: #ff0000;
+}
+
+.react-tel-input .form-control:focus {
+  border-bottom: 1px solid #ff0000;
+  outline: none;
+  box-shadow: none;
+  color: #ff0000;
+}

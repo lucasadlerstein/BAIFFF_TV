@@ -9,6 +9,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import clienteAxios from '../config/axios';
 import { withTranslation } from '../i18n';
+import InputMask from 'react-input-mask';
+import PhoneInput from 'react-phone-input-2'
 
 const Contenedor = styled(Container)`
     padding: 5rem 0 3rem 0;
@@ -35,6 +37,27 @@ const TextField = styled.input`
         outline: none;
     }
 `;
+
+const InputMaskP = styled(InputMask)`
+    font-family: 'Raleway';
+    border: none;
+    border-bottom: 1px solid #ff0000;
+    padding: 0 0 0.5rem .1rem;
+    color: #ff0000;
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 21px;
+    margin-bottom: 3rem;
+    
+    &::placeholder {
+        color: #ff0000;
+        opacity: 1;        
+    }
+    &:focus {
+        outline: none;
+    }
+`;
+
 const SelectP = styled.select`
     font-family: 'Raleway';
     border: none;
@@ -302,7 +325,14 @@ const Inscripcion = ({t}) => {
                                 <Row>
                                     <Col sm={6}>
                                         <TextField value={formulario.i_nombre} type="text" required placeholder={t('Inscripcion.E1.Nombre')} name="i_nombre" onChange={(e) => handleChange(e)} />
-                                        <TextField value={formulario.i_telefono} type="tel" required placeholder={t('Inscripcion.E1.Tel')} name="i_telefono" onChange={(e) => handleChange(e)} />
+                                        <PhoneInput
+                                            placeholder={t('Inscripcion.E1.Tel')}
+                                            required
+                                            name="i_telefono"
+                                            country={'ar'}
+                                            value={formulario.i_telefono}
+                                            onChange={phone => setFormulario({...formulario, i_telefono: phone })}
+                                        />
                                         <TextField value={formulario.i_email} type="email" required placeholder={t('Inscripcion.E1.Email')} name="i_email" onChange={(e) => handleChange(e)} />
                                         <TextField value={formulario.i_cargo} type="text" required placeholder={t('Inscripcion.E1.Cargo')} name="i_cargo" onChange={(e) => handleChange(e)} />
                                     </Col>
@@ -388,10 +418,17 @@ const Inscripcion = ({t}) => {
                                             }
                                             <Row>
                                                 <Col>
-                                                    <TextField value={formulario.year} type="text" placeholder={t('Inscripcion.E3.Ano')} name="year" onChange={(e) => handleChange(e)} />
+                                                    <InputMaskP
+                                                    mask="9999" maskChar={null} value={formulario.year} type="text" placeholder={t('Inscripcion.E3.Ano')} name="year" onChange={(e) => handleChange(e)} />
                                                 </Col>
                                                 <Col>
-                                                    <TextField value={formulario.duracion} type="text" placeholder={t('Inscripcion.E3.Dura')} name="duracion" onChange={(e) => handleChange(e)} />
+                                                <InputMaskP
+                                                    mask="99:99"
+                                                    maskChar={null}
+                                                    value={formulario.duracion}
+                                                    placeholder={t('Inscripcion.E3.Dura')}
+                                                    type="text"  name="duracion" onChange={(e) => handleChange(e)}               
+                                                />
                                                 </Col>
                                             </Row>
                                             <TextField value={formulario.link} type="text" required placeholder={t('Inscripcion.E3.Link')}name="link" onChange={(e) => handleChange(e)} />
