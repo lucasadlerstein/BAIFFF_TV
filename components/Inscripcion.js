@@ -38,7 +38,6 @@ const TextField = styled.input`
         outline: none;
     }
 `;
-
 const InputMaskP = styled(InputMask)`
     font-family: 'Raleway';
     border: none;
@@ -59,7 +58,6 @@ const InputMaskP = styled(InputMask)`
         outline: none;
     }
 `;
-
 const SelectP = styled.select`
     font-family: 'Raleway';
     border: none;

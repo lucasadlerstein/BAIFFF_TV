@@ -3,6 +3,7 @@ import clienteAxios from '../../config/axios';
 import {Container} from 'reactstrap';
 import AgendaContenido from './AgendaContenido';
 import styled from '@emotion/styled';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Contenedor = styled(Container)`
     
@@ -70,16 +71,15 @@ const Cabecera = styled.div`
 const AgendaComponente = () => {
     
     const [dia, setDia] = useState(1);
-    const [programacion, setProgramacion] = useState(null);
     const [prog1, setProg1] = useState([]);
     const [prog2, setProg2] = useState([]);
     const [prog3, setProg3] = useState([]);
     const [abierto, setAbierto] = useState(null);
+    const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
         const traerProgramacion = async () => {
             const programacionDB = await clienteAxios.get('/api/programacion');
-            setProgramacion(programacionDB.data);
             let prograUno = (programacionDB.data).filter(programa => programa.dia === 1);
             let prograDos = (programacionDB.data).filter(programa => programa.dia === 2);
             let prograTres = (programacionDB.data).filter(programa => programa.dia === 3);
@@ -98,6 +98,7 @@ const AgendaComponente = () => {
             setProg1(prograUno);
             setProg2(prograDos);
             setProg3(prograTres);
+            setCargando(false);
         }
         traerProgramacion();
 
@@ -112,28 +113,6 @@ const AgendaComponente = () => {
     const cambiarFecha = (numero) => {
         setDia(numero);
     }
-    const info = [
-        {
-            imagen: '/img/NOSOTROS/Nosotros_Galeria_1.jpg',
-            duracion: '60 mins.',
-            contenido: ''
-        },
-        {
-            imagen: '/img/NOSOTROS/Nosotros_Galeria_2.jpg',
-            duracion: '30 mins.',
-            contenido: ''
-        },
-        {
-            imagen: '/img/NOSOTROS/Nosotros_Galeria_3.jpg',
-            duracion: '15 mins.',
-            contenido: ''
-        },
-        {
-            imagen: '/img/NOSOTROS/Nosotros_Galeria_4.jpg',
-            duracion: '30 mins.',
-            contenido: ''
-        }
-    ];
 
     const cambiarVisibilidad = e => {
         if(abierto === e) {
@@ -163,37 +142,43 @@ const AgendaComponente = () => {
             </Cabecera>
 
             {
-                (dia === 1) ? (
-                    prog1.map((evento) => (
-                            <BotonInvisible
-                                onClick={() => cambiarVisibilidad(evento.imagen)}
-                                key={evento.id}
-                            >
-                                <AgendaContenido info={evento} abierto={abierto} />
-                            </BotonInvisible>
-                    ))
+                (cargando === true) ? (
+                    <div style={{textAlign: 'center'}}>
+                        <CircularProgress color="black" />
+                    </div>
                 ) : (
-                    (dia === 2) ? (
-                        prog2.map((evento) => (
-                            <BotonInvisible
-                                onClick={() => cambiarVisibilidad(evento.imagen)}
-                                key={evento.id}
-
-                            >
-                                <AgendaContenido info={evento} abierto={abierto} />
-                            </BotonInvisible>
-                        ))
-                    ) : (
-                        (dia === 3) ? (
-                            prog3.map((evento) => (
+                    (dia === 1) ? (
+                        prog1.map((evento) => (
                                 <BotonInvisible
                                     onClick={() => cambiarVisibilidad(evento.imagen)}
                                     key={evento.id}
                                 >
                                     <AgendaContenido info={evento} abierto={abierto} />
                                 </BotonInvisible>
+                        ))
+                    ) : (
+                        (dia === 2) ? (
+                            prog2.map((evento) => (
+                                <BotonInvisible
+                                    onClick={() => cambiarVisibilidad(evento.imagen)}
+                                    key={evento.id}
+
+                                >
+                                    <AgendaContenido info={evento} abierto={abierto} />
+                                </BotonInvisible>
                             ))
-                        ) : null
+                        ) : (
+                            (dia === 3) ? (
+                                prog3.map((evento) => (
+                                    <BotonInvisible
+                                        onClick={() => cambiarVisibilidad(evento.imagen)}
+                                        key={evento.id}
+                                    >
+                                        <AgendaContenido info={evento} abierto={abierto} />
+                                    </BotonInvisible>
+                                ))
+                            ) : null
+                        )
                     )
                 )
             }

@@ -89,6 +89,12 @@ h1, h2, h3, h4 {
   font-size: 1.3rem!important;
 }
 
+.aSinClase, .aSinClase:hover {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Phone */
 
 .react-tel-input .form-control {
