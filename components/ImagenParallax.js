@@ -1,16 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { Parallax } from 'react-parallax';
 import styled from '@emotion/styled';
 
-const DivP = styled.div`
-    height: 10rem;
-    @media (min-width: 768px){
-        height: 35rem;
-    }
-`;
-
 const ImagenParallax = ({imagen, nombre}) => {
-
     const [ancho, setAncho] = useState(null);
 
     useEffect(() => {
@@ -23,17 +14,22 @@ const ImagenParallax = ({imagen, nombre}) => {
         // eslint-disable-next-line
     }, []);
 
-    return ( 
-        <div>
-            <Parallax
-                bgImage={imagen}
-                bgImageAlt={nombre}
-                strength={ancho ? 200 : 50 }
-            >   
-                <DivP />
-            </Parallax>
- 
-        </div>
+    const ParallaxFondo = styled.div`
+        background-image: ${`url(${imagen});`};
+        background-repeat: no-repeat;
+        background-attachment: ${(ancho === true) ? 'fixed' : 'unset'};
+        background-position: center;
+        position: relative;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        height: ${(ancho === true) ? '35rem' : '15rem'};
+        padding: 0;
+    `;
+
+    return (
+        <ParallaxFondo>
+        </ParallaxFondo>
     );
 }
  

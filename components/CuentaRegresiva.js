@@ -1,26 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Countdown from "react-countdown";
-import { Parallax } from 'react-parallax';
 import styled from '@emotion/styled';
-
-const DivP = styled.div`
-    height: 10rem;
-    @media (min-width: 768px){
-        height: 35rem;
-    }
-    span {
-        font-size: 2rem!important;
-        letter-spacing: 2rem!important;
-        @media (min-width: 768px){
-            font-size: 5rem!important;
-            letter-spacing: 5rem!important;
-        }
-        @media (min-width: 991px){
-            font-size: 6rem!important;
-            letter-spacing: 8rem!important;
-        }
-    }
-`;
 
 const cuentaRegresiva = {
     background: 'transparent',
@@ -45,6 +25,34 @@ const CuentaRegresiva = () => {
         // eslint-disable-next-line
     }, []);
 
+    const ParallaxFondo = styled.div`
+        background-image: url('/img/HOME/Home_Countdown.jpg');
+        background-repeat: no-repeat;
+        background-attachment: ${(ancho === true) ? 'fixed' : 'unset'};
+        background-position: center;
+        position: relative;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        padding: 0;
+        height: 10rem;
+        @media (min-width: 768px){
+            height: 35rem;
+        }   
+        span {
+            font-size: 2rem!important;
+            letter-spacing: 2rem!important;
+            @media (min-width: 768px){
+                font-size: 5rem!important;
+                letter-spacing: 5rem!important;
+            }
+            @media (min-width: 991px){
+                font-size: 6rem!important;
+                letter-spacing: 8rem!important;
+            }
+        }
+    `;
+
     const Completionist = () => <span>BAIFFF</span>;
     
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -59,25 +67,16 @@ const CuentaRegresiva = () => {
             </span>
           );
         }
-      };
+    };
 
     return (
-        <div>
-            <Parallax
-                bgImage={'/img/HOME/Home_Countdown.jpg'}
-                bgImageAlt={'24, 25 y 26 de Septiembre de 2020'}
-                strength={ancho ? 100 : 80 }
-            >   
-                <DivP>
-                    <div style={cuentaRegresiva}>
-                        <Countdown date={1600891199000} renderer={renderer}>
-                            <Completionist />
-                        </Countdown>    
-                    </div>
-                </DivP>
-            </Parallax>
- 
-        </div>
+        <ParallaxFondo>
+            <div style={cuentaRegresiva}>
+                <Countdown date={1600891199000} renderer={renderer}>
+                    <Completionist />
+                </Countdown>    
+            </div>
+        </ParallaxFondo>
     );
 }
  
