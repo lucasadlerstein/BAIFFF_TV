@@ -59,6 +59,7 @@ export default ({enlace}) => {
                     font-size: 1.6rem;
                     text-align: justify;
                     margin-bottom: 5rem;
+                    white-space: pre-line;
                 }
             `;
             const DerechaImg = styled.div`

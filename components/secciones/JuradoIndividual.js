@@ -56,7 +56,7 @@ const JuradoIndividual = ({foto, nombre, rol, instagram}) => {
         <Tarjeta>
             <Imagen></Imagen>
             <FooterTarjeta>
-                <Rol>{rol}</Rol>
+                {/* <Rol>{rol}</Rol> */}
                 <Nombre>{nombre}</Nombre>
                 <Instagram target="_blank" href={`https://instagram.com/${instagram}`}>@{instagram}</Instagram>
             </FooterTarjeta>
