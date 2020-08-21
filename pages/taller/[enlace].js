@@ -6,6 +6,7 @@ import {i18n} from '../../i18n';
 import PortadaSeccion from '../../components/secciones/PortadaSeccion';
 import styled from '@emotion/styled';
 import Boton from '../../components/ui/Boton';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Generar un enlace por cada slug
 export async function getStaticPaths() {
@@ -31,13 +32,15 @@ export async function getStaticProps({params}) {
 
 export default ({enlace}) => {
     const router = useRouter();
-    if (router.isFallback) {
-        return (
-            <Layout>
-                <p>Cargando...</p>
-            </Layout>
-        )
-    } else {
+    // if (router.isFallback) {
+    //     return (
+    //         <Layout>
+    //             <div style={{textAlign: 'center'}}>
+    //                 <CircularProgress color="black" />
+    //             </div>
+    //         </Layout>
+    //     )
+    // } else {
         if(enlace.status !== 'incorrecto A'){
             const Contenedor = styled.div`
                 @media (min-width: 768px){
@@ -88,5 +91,5 @@ export default ({enlace}) => {
         } else {
             window.location.replace("/");
         }
-    }
+    // }
 }
