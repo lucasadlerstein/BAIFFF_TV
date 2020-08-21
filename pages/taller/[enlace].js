@@ -25,7 +25,7 @@ export async function getStaticProps({params}) {
         props: {
             enlace: resultado.data
         },
-        unstable_revalidate: 60
+        revalidate: 60
     }
 }
 
