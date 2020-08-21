@@ -25,11 +25,11 @@ export async function getStaticProps({params}) {
         props: {
             enlace: resultado.data
         },
-        revalidate: 60
+        unstable_revalidate: 60
     }
 }
 
-const Taller = ({enlace, t}) => {
+const Enlace = ({enlace, t}) => {
     const router = useRouter();
     if (router.isFallback) {
         return (
@@ -92,4 +92,4 @@ const Taller = ({enlace, t}) => {
     }
 }
 
-export default withTranslation('common')(Taller);
+export default withTranslation('common')(Enlace);

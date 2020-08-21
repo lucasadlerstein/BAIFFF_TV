@@ -1,8 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from '@emotion/styled';
+import clienteAxios from '../config/axios';
+import {i18n} from '../i18n';
 
-const ElTaller = ({titulo, contenido, imagen}) => {
-    
+const ElTaller = () => {
+    const [taller, setTaller] = useState({
+        titulo_es: '',
+        titulo_en: '',
+        descripcion_en: '',
+        descripcion_es: '',
+        imagen_es: ''
+    });
+    useEffect( () => {
+        async function traerTaller(taller)  {
+            const resul = await clienteAxios.get(`/api/talleres/id/${taller}`);
+            console.log(resul.data);
+            setTaller(resul.data);
+        }
+        traerTaller(3);
+        // eslint-disable-next-line
+    }, [])
+
     const Contenido = styled.div`
         width: 100%;
         @media (min-width: 768px){
@@ -11,7 +29,7 @@ const ElTaller = ({titulo, contenido, imagen}) => {
     `;
     const Imagen = styled.div`
         width: 100%;
-        background-image: ${`url(${imagen});`};
+        background-image: ${`url(https://api.baifff.tv/static/${taller.imagen_es});`};
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -19,7 +37,6 @@ const ElTaller = ({titulo, contenido, imagen}) => {
         @media (min-width: 768px){
             width: 51%;
             min-height: 100%;
-
         }
     `;
     const Informacion = styled.div`
@@ -77,12 +94,19 @@ const ElTaller = ({titulo, contenido, imagen}) => {
     
     return (
         <Contenido>
-            <Informacion>
-                <h3>{titulo}</h3>
-                <p>
-                    {contenido}
-                </p>
-            </Informacion>
+            {
+                (i18n.language === 'es') ? (
+                    <Informacion>
+                        <h3>{taller.titulo_es}</h3>    
+                        <p>{taller.descripcion_es}</p>
+                    </Informacion>
+                ) : (
+                    <Informacion>
+                        <h3>{taller.titulo_en}</h3>    
+                        <p>{taller.descripcion_en}</p>
+                    </Informacion>
+                )
+            }
             <Imagen></Imagen>
         </Contenido>
     );

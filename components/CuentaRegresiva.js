@@ -53,7 +53,7 @@ const CuentaRegresiva = () => {
         }
     `;
 
-    const Completionist = () => <span>BAIFFF</span>;
+    const Completionist = () => <p>BAIFFF</p>;
     
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
@@ -72,7 +72,7 @@ const CuentaRegresiva = () => {
     return (
         <ParallaxFondo>
             <div style={cuentaRegresiva}>
-                <Countdown date={1600891199000} renderer={renderer}>
+                <Countdown date={1600354800000} renderer={renderer}>
                     <Completionist />
                 </Countdown>    
             </div>

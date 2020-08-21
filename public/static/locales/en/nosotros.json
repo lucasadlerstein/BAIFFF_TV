@@ -21,13 +21,14 @@
     },
     "Staff": {
         "Director": "Director",
-        "Productor": "Productor ejecutivo",
-        "GerenteProd": "Gerente de producción y creatividad",
-        "AsistenteProd": "Asistente de producción",
-        "Agencia": "Agencia digital",
-        "Logo": "Diseño de logo",
-        "ContenidoRRSS": "Contenido para RRSS",
-        "DesarrolloWeb": "Agencia de diseño y desarrollo web"
+        "Productor": "Executive Producer",
+        "GerenteProd": "Production and Creative Manager",
+        "AsistenteProd": "Production Assistant",
+        "Agencia": "Digital Agency",
+        "DisenoImagen": "Image Design",
+        "Logo": "Logo Design",
+        "ContenidoRRSS": "Social Media Content",
+        "DesarrolloWeb": "Web Design and Development Agency"
     },
     "EdicionesAnteriores": {
         "Titulo": "Previous Editions",

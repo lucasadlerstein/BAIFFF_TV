@@ -10,7 +10,7 @@ const Layout = ({children, t}) => {
         <>
             <Head>
                 <meta charet="UTF-8" />
-                <title>BAIFFF - Buenos Aires International Fashion Film Festival</title>
+                <title>{t('Head.Title')}</title>
                 <meta name="description" content={t('Head.Description')} />
                 <meta name="keywords" content={t('Head.Keywords')} />
                 <meta name="robots" content="index, follow" />
