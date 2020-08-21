@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import clienteAxios from '../../config/axios';
 import {useRouter} from 'next/router';
-import {i18n, withTranslation} from '../../i18n';
+import {i18n} from '../../i18n';
 import PortadaSeccion from '../../components/secciones/PortadaSeccion';
 import styled from '@emotion/styled';
 import Boton from '../../components/ui/Boton';
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
         // Aca va un array con los SLUGS
         params: { enlace: enlace.slug_es }
     }))
-    return { paths, fallback: false }
+    return { paths, fallback: true }
 }
 
 export async function getStaticProps({params}) {
@@ -29,7 +29,7 @@ export async function getStaticProps({params}) {
     }
 }
 
-const Enlace = ({enlace, t}) => {
+export default ({enlace}) => {
     const router = useRouter();
     if (router.isFallback) {
         return (
@@ -79,7 +79,7 @@ const Enlace = ({enlace, t}) => {
                             <p>
                                 {(i18n.language === 'en' ? enlace.descripcion_en : enlace.descripcion_es)}
                             </p>
-                            <Boton color={true} texto={t('Taller.Pagar')} />
+                            <Boton color={true} texto={i18n.language === 'en' ? 'Pay with MercadoPago' : 'Pagar con MercadoPago'} />
                         </IzquierdaTexto>
                         <DerechaImg></DerechaImg>
                     </Contenedor>
@@ -88,8 +88,5 @@ const Enlace = ({enlace, t}) => {
         } else {
             window.location.replace("/");
         }
-
     }
 }
-
-export default withTranslation('common')(Enlace);
