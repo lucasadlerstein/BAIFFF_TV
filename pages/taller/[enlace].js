@@ -32,15 +32,15 @@ export async function getStaticProps({params}) {
 
 export default ({enlace}) => {
     const router = useRouter();
-    // if (router.isFallback) {
-    //     return (
-    //         <Layout>
-    //             <div style={{textAlign: 'center'}}>
-    //                 <CircularProgress color="black" />
-    //             </div>
-    //         </Layout>
-    //     )
-    // } else {
+    if (router.isFallback) {
+        return (
+            <Layout>
+                <div style={{textAlign: 'center'}} className="pt-4 pb-4 mb-4 mt-4">
+                    <CircularProgress color="black" />
+                </div>
+            </Layout>
+        )
+    } else {
         if(enlace.status !== 'incorrecto A'){
             const Contenedor = styled.div`
                 @media (min-width: 768px){
@@ -91,5 +91,5 @@ export default ({enlace}) => {
         } else {
             window.location.replace("/");
         }
-    // }
+    }
 }
