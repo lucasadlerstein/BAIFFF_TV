@@ -15,7 +15,7 @@ export async function getStaticPaths() {
         // Aca va un array con los SLUGS
         params: { enlace: enlace.slug_es }
     }))
-    return { paths, fallback: true }
+    return { paths, fallback: false }
 }
 
 export async function getStaticProps({params}) {

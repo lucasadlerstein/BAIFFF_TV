@@ -115,8 +115,10 @@ const MensajeError = styled.p`
     font-size: 1.2rem;
     margin-top: 1rem;
     max-width: 245px;
+    text-align: left;
     @media (max-width: 768px){
         margin: 1rem 0;
+        text-align: center;
     }
 `;
 const BotonBlanco = styled(BotonUI)`
