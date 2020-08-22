@@ -12,7 +12,7 @@ const Agenda = ({t}) => {
         <Layout>
             <PortadaSeccion foto={'/img/AGENDA/Agenda_Header.jpg'} titulo={t('Agenda.Titulo')} />
             <AgendaComponente />
-            <ElTaller />
+            {/* <ElTaller /> */}
             <ImagenParallax imagen='/img/AGENDA/Agenda_Divisor_1.jpg' nombre={t('Agenda.Titulo')} />
         </Layout>
     );

@@ -36,7 +36,7 @@ export default ({enlace}) => {
         return (
             <Layout>
                 <div style={{textAlign: 'center'}} className="pt-4 pb-4 mb-4 mt-4">
-                    <CircularProgress color="black" />
+                    <CircularProgress />
                 </div>
             </Layout>
         )

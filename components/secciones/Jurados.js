@@ -27,13 +27,13 @@ const Jurados = ({t}) => {
                 <Col sm={12} md={6} lg={3}>
                     <JuradoIndividual foto={'/img/MASINFO/JURADOS/NachoLopez.jpeg'} nombre={'NACHO LOPEZ FAGALDE'} rol={t('Juradxs.Roles.Directora')} instagram={'nacholopezfagalde'} />
                     <JuradoIndividual foto={'/img/MASINFO/JURADOS/SolAbadi.jpg'} nombre={'SOL ABADI'} rol={t('Juradxs.Roles.Directora')} instagram={'solabadi'} />
-                    <JuradoIndividual foto={'/img/MASINFO/JURADOS/Diane.jpg'} nombre={'HERNAN CORERA'} rol={t('Juradxs.Roles.Directora')} instagram={'hernancorera'} />
+                    <JuradoIndividual foto={'/img/MASINFO/JURADOS/Hernan.jpg'} nombre={'HERNAN CORERA'} rol={t('Juradxs.Roles.Directora')} instagram={'hernancorera'} />
 
                 </Col>
                 <Col sm={12} md={6} lg={3}>
                     <JuradoIndividual foto={'/img/MASINFO/JURADOS/Luca.jpg'} nombre={'LUCA FINOTTI'} rol={t('Juradxs.Roles.Directora')} instagram={'lucafinotti'} />
                     <JuradoIndividual foto={'/img/MASINFO/JURADOS/Mathew.jpg'} nombre={'MATHEW LIBATIQUE'} rol={t('Juradxs.Roles.Directora')} instagram={'libatique'} />
-                    <JuradoIndividual foto={'/img/MASINFO/JURADOS/Diane.jpg'} nombre={'ERIK MADIGAN HECK'} rol={t('Juradxs.Roles.Directora')} instagram={'erikmadiganheck'} />
+                    <JuradoIndividual foto={'/img/MASINFO/JURADOS/Erik.jpg'} nombre={'ERIK MADIGAN HECK'} rol={t('Juradxs.Roles.Directora')} instagram={'erikmadiganheck'} />
 
                 </Col>
                 <Col sm={12} md={6} lg={3}>

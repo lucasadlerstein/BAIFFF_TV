@@ -4,6 +4,7 @@ import {Container} from 'reactstrap';
 import AgendaContenido from './AgendaContenido';
 import styled from '@emotion/styled';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import AgendaEnProceso from './AgendaEnProceso';
 
 const Contenedor = styled(Container)`
     
@@ -144,32 +145,28 @@ const AgendaComponente = () => {
             {
                 (cargando === true) ? (
                     <div style={{textAlign: 'center'}}>
-                        <CircularProgress color="black" />
+                        <CircularProgress />
                     </div>
                 ) : (
                     (dia === 1) ? (
-                        prog1.map((evento) => (
-                                <BotonInvisible
-                                    onClick={() => cambiarVisibilidad(evento.imagen)}
-                                    key={evento.id}
-                                >
-                                    <AgendaContenido info={evento} abierto={abierto} />
-                                </BotonInvisible>
-                        ))
+                        (prog1.length === 0) ? (
+                            <AgendaEnProceso />
+                        ) : (
+                            prog1.map((evento) => (
+                                    <BotonInvisible
+                                        onClick={() => cambiarVisibilidad(evento.imagen)}
+                                        key={evento.id}
+                                    >
+                                        <AgendaContenido info={evento} abierto={abierto} />
+                                    </BotonInvisible>
+                            ))
+                        )
                     ) : (
                         (dia === 2) ? (
-                            prog2.map((evento) => (
-                                <BotonInvisible
-                                    onClick={() => cambiarVisibilidad(evento.imagen)}
-                                    key={evento.id}
-
-                                >
-                                    <AgendaContenido info={evento} abierto={abierto} />
-                                </BotonInvisible>
-                            ))
-                        ) : (
-                            (dia === 3) ? (
-                                prog3.map((evento) => (
+                            (prog2.length === 0) ? (
+                                <AgendaEnProceso />
+                            ) : (
+                                prog2.map((evento) => (
                                     <BotonInvisible
                                         onClick={() => cambiarVisibilidad(evento.imagen)}
                                         key={evento.id}
@@ -177,6 +174,21 @@ const AgendaComponente = () => {
                                         <AgendaContenido info={evento} abierto={abierto} />
                                     </BotonInvisible>
                                 ))
+                            )
+                        ) : (
+                            (dia === 3) ? (
+                                (prog3.length === 0) ? (
+                                    <AgendaEnProceso />
+                                ) : (
+                                    prog3.map((evento) => (
+                                        <BotonInvisible
+                                            onClick={() => cambiarVisibilidad(evento.imagen)}
+                                            key={evento.id}
+                                        >
+                                            <AgendaContenido info={evento} abierto={abierto} />
+                                        </BotonInvisible>
+                                    ))
+                                )
                             ) : null
                         )
                     )
