@@ -2,6 +2,7 @@ import React from 'react';
 import {Row, Col} from 'reactstrap';
 import Boton from './ui/Boton';
 import styled from '@emotion/styled';
+import { withTranslation } from '../i18n';
 
 const Izquierda = styled.div`
     padding: 2rem 0;
@@ -11,7 +12,7 @@ const Izquierda = styled.div`
         font-family: 'MonumentExtended';
         line-height: 60px;
         /* font-size: 3rem; */
-        font-size: 2.6rem;
+        font-size: 2.3rem;
         text-transform: uppercase;
     }
     p {
@@ -24,12 +25,12 @@ const Izquierda = styled.div`
     }
     @media (min-width: 400px){
         h2 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
         }
     }
     @media (min-width: 540px){
         h2 {
-            font-size: 4.2rem;
+            font-size: 4rem;
             text-align: left;
         }
     }
@@ -201,8 +202,6 @@ const ContenidoIzq = styled.div`
         margin: 0 auto;
     }
 `;
-
-import { withTranslation } from '../i18n';
 
 const ElFestival = ({t}) => {
     return ( 

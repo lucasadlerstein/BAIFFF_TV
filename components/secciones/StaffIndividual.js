@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import {Col} from 'reactstrap';
 
 const DivP = styled.div`
     width: 100%;
@@ -30,7 +31,7 @@ const DivP = styled.div`
     }
 
     @media (min-width: 768px){
-        margin: 7rem auto;
+        margin: 3rem auto;
         h5 {
             font-size: 2rem;
         }
@@ -60,10 +61,12 @@ const DivP = styled.div`
 
 const StaffIndividual = ({nombre, rol, mb0}) => {
     return ( 
-        <DivP className={mb0 ? 'mb-0' : null}>
-            <h5>{nombre}</h5>
-            <p>{rol}</p>
-        </DivP>
+        <Col sm={12} md={6} lg={4}>
+            <DivP className={mb0 ? 'mb-0' : null}>
+                <h5>{nombre}</h5>
+                <p>{rol}</p>
+            </DivP>
+        </Col>
     );
 }
  

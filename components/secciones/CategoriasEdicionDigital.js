@@ -26,7 +26,7 @@ const RowP = styled(Row)`
 const CategoriasEdicionDigital = ({t}) => {
     return (
         <Contenedor>
-            <TituloSeccion texto={t('Categorias.Titulo')} color={false} tamano={'7rem'} />
+            <TituloSeccion texto={t('Categorias.Titulo')} color={false} tamano={'7rem'} tamanoSm={'3rem'} />
             <RowP>
                 <Col sm={12} lg={5}>
                     <Lista>

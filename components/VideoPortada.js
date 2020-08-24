@@ -22,6 +22,9 @@ const Logo = styled.img`
         left: 42%;
         width: 15%;
     }
+    @media (max-width: 768px){
+        display: none!important;
+    }
 `;
 
 const VideoPortada = () => {

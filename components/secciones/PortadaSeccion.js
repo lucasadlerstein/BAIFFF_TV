@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import {Container} from 'reactstrap';
 
-const PortadaSeccion = ({foto, titulo}) => {
+const PortadaSeccion = ({foto, titulo, fsm}) => {
     
     const Portada = styled.div`
         background-image: url(${foto});
@@ -21,7 +21,7 @@ const PortadaSeccion = ({foto, titulo}) => {
     const Texto = styled.h1`
         color: white;
         font-family: 'MonumentExtended';
-        font-size: 3.5rem;
+        font-size: ${fsm ? fsm : '3.5rem'};
         text-transform: uppercase;
         position: absolute;
         bottom: 1rem;

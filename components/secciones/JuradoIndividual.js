@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import {Col} from 'reactstrap';
 
 const Tarjeta = styled.div`
     margin: 0 auto;
@@ -50,17 +51,23 @@ const JuradoIndividual = ({foto, nombre, rol, instagram}) => {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        filter: grayscale(100%);
         transition: all .3s ease;
+        &:hover {
+            filter: none;
+        }
     `;
     return (
-        <Tarjeta>
-            <Imagen></Imagen>
-            <FooterTarjeta>
-                {/* <Rol>{rol}</Rol> */}
-                <Nombre>{nombre}</Nombre>
-                <Instagram target="_blank" href={`https://instagram.com/${instagram}`}>@{instagram}</Instagram>
-            </FooterTarjeta>
-        </Tarjeta>
+        <Col sm={12} md={6} lg={3}>
+            <Tarjeta>
+                <Imagen></Imagen>
+                <FooterTarjeta>
+                    {/* <Rol>{rol}</Rol> */}
+                    <Nombre>{nombre}</Nombre>
+                    <Instagram target="_blank" href={`https://instagram.com/${instagram}`}>@{instagram}</Instagram>
+                </FooterTarjeta>
+            </Tarjeta>
+        </Col>
     );
 }
  
