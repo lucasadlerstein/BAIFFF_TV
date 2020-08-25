@@ -12,6 +12,9 @@ import { withTranslation } from '../i18n';
 import InputMask from 'react-input-mask';
 import PhoneInput from 'react-phone-input-2'
 
+import { KeyboardDatePicker } from "@material-ui/pickers";
+
+
 const Contenedor = styled(Container)`
     padding: 5rem 0 3rem 0;
     @media (min-width: 768px){
@@ -216,18 +219,16 @@ const Inscripcion = ({t}) => {
         }
     }
 
-    const onFocusDate = () => {
-        let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-        if(isSafari) {
-            document.querySelector('#nacimientoDirector').placeholder = 'yyyy-mm-dd';
-        } else {
-            document.querySelector('#nacimientoDirector').type = 'date';
-        }
-    }
-    const onBlurDate = () => { document.querySelector('#nacimientoDirector').type = 'text'; }
+    // const onFocusDate = () => {
+    //     document.querySelector('#nacimientoDirector').type = 'date';
+    // }
+    
+    // const onBlurDate = () => {
+    //     document.querySelector('#nacimientoDirector').type = 'text';
+    // }
 
-    // const onFocusDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'mm/dd/aaaa'; }
-    // const onBlurDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'Fecha de nacimiento'; }
+    const onFocusDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'dd/mm/aaaa'; }
+    const onBlurDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'Fecha de nacimiento'; }
 
     const onChangeTerminos = (e) => {
         setTyc(e.target.checked);
@@ -365,8 +366,11 @@ const Inscripcion = ({t}) => {
                                     <Row>
                                         <Col>
                                             <TextField value={formulario.d_nombre} type="text" required placeholder={t('Inscripcion.E2.Nombre')} name="d_nombre" onChange={(e) => handleChange(e)} />
-                                            <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder={t('Inscripcion.E2.Nac')} name="d_nacimiento" onChange={(e) => handleChange(e)} />
-                                            {/* <InputMaskP mask="99/99/9999" id="nacimientoDirector" maskChar={null} value={formulario.d_nacimiento} type="text" placeholder={t('Inscripcion.E2.Nac')} onFocus={() => onFocusDate()} onBlur={() => onBlurDate()}name="d_nacimiento" onChange={(e) => handleChange(e)} /> */}
+                                            
+                                            {/* <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder={t('Inscripcion.E2.Nac')} name="d_nacimiento" onChange={(e) => handleChange(e)} /> */}
+
+                                            <InputMaskP mask="99/99/9999" id="nacimientoDirector" maskChar={null} value={formulario.d_nacimiento} type="text" placeholder={t('Inscripcion.E2.Nac')} onFocus={() => onFocusDate()} onBlur={() => onBlurDate()}name="d_nacimiento" onChange={(e) => handleChange(e)} />
+
                                             <TextField value={formulario.d_nacionalidad} type="text" required placeholder={t('Inscripcion.E2.Nacion')} name="d_nacionalidad" onChange={(e) => handleChange(e)} />
                                             <SelectP
                                                 onChange={(e) => handleChange(e)}
