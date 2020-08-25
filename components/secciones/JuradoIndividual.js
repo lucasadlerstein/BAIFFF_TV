@@ -53,9 +53,6 @@ const JuradoIndividual = ({foto, nombre, rol, instagram}) => {
         background-repeat: no-repeat;
         filter: grayscale(100%);
         transition: all .3s ease;
-        &:hover {
-            filter: none;
-        }
     `;
     return (
         <Col sm={12} md={6} lg={3}>

@@ -202,6 +202,12 @@ const Inscripcion = ({t}) => {
                 });
                 setPublicitario(null);
             }
+        } else if(e.target.name === 'd_nacimiento') {
+            setFormulario({
+                ...formulario,
+                [e.target.name]: e.target.value
+            });
+            // let valid_date = new Date(e.target.value);
         } else {
             setFormulario({
                 ...formulario,
@@ -210,8 +216,18 @@ const Inscripcion = ({t}) => {
         }
     }
 
-    const onFocusDate = () => { document.querySelector('#nacimientoDirector').type = 'date'; }
+    const onFocusDate = () => {
+        let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+        if(isSafari) {
+            document.querySelector('#nacimientoDirector').placeholder = 'yyyy-mm-dd';
+        } else {
+            document.querySelector('#nacimientoDirector').type = 'date';
+        }
+    }
     const onBlurDate = () => { document.querySelector('#nacimientoDirector').type = 'text'; }
+
+    // const onFocusDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'mm/dd/aaaa'; }
+    // const onBlurDate = () => { document.querySelector('#nacimientoDirector').placeholder = 'Fecha de nacimiento'; }
 
     const onChangeTerminos = (e) => {
         setTyc(e.target.checked);
@@ -238,11 +254,11 @@ const Inscripcion = ({t}) => {
                 // (formulario.d_facebook).trim() === '' ||
                 // (formulario.d_instagram).trim() === '' ||
                 (formulario.d_email).trim() === '') {
-                setError(t('Inscripcion.Errores.Campos'));    
-            } else {
-                setError(null);
-                nuevaEtapa = etapa + 1;
-            }
+                    setError(t('Inscripcion.Errores.Campos'));
+                } else {
+                    setError(null);
+                    nuevaEtapa = etapa + 1;
+                }
         } 
         setTimeout(() => {
             setError(null);
@@ -281,7 +297,7 @@ const Inscripcion = ({t}) => {
                     setOpen(true);
                     setTimeout(() => {
                         setOpen(false);
-                    }, 3000);
+                    }, 15000);
 
                     // Enviado
                     setEnviado(true);
@@ -350,6 +366,7 @@ const Inscripcion = ({t}) => {
                                         <Col>
                                             <TextField value={formulario.d_nombre} type="text" required placeholder={t('Inscripcion.E2.Nombre')} name="d_nombre" onChange={(e) => handleChange(e)} />
                                             <TextField value={formulario.d_nacimiento} type="text" onFocus={() => onFocusDate()} id="nacimientoDirector" onBlur={() => onBlurDate()} required placeholder={t('Inscripcion.E2.Nac')} name="d_nacimiento" onChange={(e) => handleChange(e)} />
+                                            {/* <InputMaskP mask="99/99/9999" id="nacimientoDirector" maskChar={null} value={formulario.d_nacimiento} type="text" placeholder={t('Inscripcion.E2.Nac')} onFocus={() => onFocusDate()} onBlur={() => onBlurDate()}name="d_nacimiento" onChange={(e) => handleChange(e)} /> */}
                                             <TextField value={formulario.d_nacionalidad} type="text" required placeholder={t('Inscripcion.E2.Nacion')} name="d_nacionalidad" onChange={(e) => handleChange(e)} />
                                             <SelectP
                                                 onChange={(e) => handleChange(e)}
@@ -359,7 +376,7 @@ const Inscripcion = ({t}) => {
                                             >
                                             <option selected disabled value="">{t('Inscripcion.E2.Tipo')}</option>
                                             <option value="Profesional">{t('Inscripcion.E2.Tipos.Pro')}</option>
-                                            <option value="Independiente">{t('Inscripcion.E2.Tipos.Ind')}</option>
+                                            <option value="Emergente">{t('Inscripcion.E2.Tipos.Ind')}</option>
                                             </SelectP>
                                         </Col>
                                         <Col>
@@ -474,7 +491,7 @@ const Inscripcion = ({t}) => {
                                 </ContenedorBoton>
                             )
                         }
-                        <Snackbar open={open} autoHideDuration={4000}>
+                        <Snackbar open={open} autoHideDuration={15000}>
                             <MuiAlertP severity="success">
                             {t('Inscripcion.Adicionales.Exito')}
                             </MuiAlertP>

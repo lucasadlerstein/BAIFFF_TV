@@ -14,7 +14,6 @@ const ElTaller = () => {
     useEffect( () => {
         async function traerTaller(taller)  {
             const resul = await clienteAxios.get(`/api/talleres/id/${taller}`);
-            console.log(resul.data);
             setTaller(resul.data);
         }
         traerTaller(3);
