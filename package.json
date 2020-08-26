@@ -25,6 +25,7 @@
     "next-fonts": "^1.4.0",
     "next-i18next": "^6.0.2",
     "react": "16.13.1",
+    "react-bootstrap-sweetalert": "^5.2.0",
     "react-countdown": "^2.2.1",
     "react-dom": "16.13.1",
     "react-i18next": "^11.7.0",
@@ -33,6 +34,8 @@
     "react-player": "^2.6.0",
     "react-video-cover": "^1.2.2",
     "reactstrap": "^8.5.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "sweetalert2": "^9.17.1",
+    "sweetalert2-react-content": "^3.0.3"
   }
 }

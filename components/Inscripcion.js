@@ -14,6 +14,8 @@ import PhoneInput from 'react-phone-input-2'
 
 import { KeyboardDatePicker } from "@material-ui/pickers";
 
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const Contenedor = styled(Container)`
     padding: 5rem 0 3rem 0;
@@ -294,14 +296,26 @@ const Inscripcion = ({t}) => {
                     // Enviar form
                     const enviarForm = await clienteAxios.post('/api/films/', formulario);
 
-                    // Avisar que se envio el form
-                    setOpen(true);
-                    setTimeout(() => {
-                        setOpen(false);
-                    }, 15000);
-
-                    // Enviado
-                    setEnviado(true);
+                    // SWAL
+                    const ConfirmacionSwal = withReactContent(Swal);
+                    ConfirmacionSwal.fire({
+                        title: t('Inscripcion.Swal.Titulo'),
+                        text: t('Inscripcion.Swal.SubTitulo'),
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#FF0000',
+                        cancelButtonColor: '#000000',
+                        cancelButtonText: t('Inscripcion.Swal.BotonOtro'),
+                        confirmButtonText: t('Inscripcion.Swal.BotonOK')
+                        }).then((result) => {
+                        if (result.value) {
+                            // Enviado
+                            setEnviado(true);
+                        } else {
+                            // Inscribir otro film!!
+                            inscribirOtro();
+                        }
+                        });
                 } catch (error) {
                     
                 }
@@ -495,11 +509,6 @@ const Inscripcion = ({t}) => {
                                 </ContenedorBoton>
                             )
                         }
-                        <Snackbar open={open} autoHideDuration={15000}>
-                            <MuiAlertP severity="success">
-                            {t('Inscripcion.Adicionales.Exito')}
-                            </MuiAlertP>
-                        </Snackbar>
                     </form>
                 </Col>
             </RowPersonalizada>

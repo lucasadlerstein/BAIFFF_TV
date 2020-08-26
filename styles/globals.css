@@ -112,3 +112,10 @@ h1, h2, h3, h4 {
   box-shadow: none;
   color: #ff0000;
 }
+
+
+/* Swal */
+.swal2-modal {
+  font-size: 1.5rem!important;
+  font-family: 'Raleway'!important;
+}

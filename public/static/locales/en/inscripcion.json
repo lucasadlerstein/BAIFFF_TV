@@ -63,6 +63,12 @@
         "Adicionales": {
             "Exito": "Film submitted successfully",
             "Siguiente": "Next"
+        },
+        "Swal": {
+            "Titulo": "CONGRATS!",
+            "SubTitulo": "Film submitted successfully.",
+            "BotonOK": "OK",
+            "BotonOtro": "SUBMIT ANOTHER FILM"
         }
     }
 }

@@ -63,6 +63,12 @@
         "Adicionales": {
             "Exito": "Film inscripto con éxito",
             "Siguiente": "Siguiente"
+        },
+        "Swal": {
+            "Titulo": "¡FELICITACIONES!",
+            "SubTitulo": "Film inscripto con éxito",
+            "BotonOK": "OK",
+            "BotonOtro": "INSCRIBIR OTRO FILM"
         }
     }
 }

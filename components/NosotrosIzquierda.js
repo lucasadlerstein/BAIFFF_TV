@@ -149,6 +149,7 @@ const ContenedorDos = styled.div`
     @media (min-width: 768px){
         padding: 5rem; /* 9rem 5rem */
         text-align: center;
+        min-height: 52rem;
         h2 {
             font-size: 3.2rem;
         }
