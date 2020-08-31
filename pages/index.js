@@ -4,8 +4,8 @@ import VideoPortada from '../components/VideoPortada';
 import ImagenParallax from '../components/ImagenParallax';
 import SeccionNosotros from '../components/SeccionNosotros';
 import ElFestival from '../components/ElFestival';
-import Sponsors from '../components/Sponsors';
-import Inscripcion from '../components/Inscripcion';
+// import Sponsors from '../components/Sponsors';
+// import Inscripcion from '../components/Inscripcion';
 import CuentaRegresiva from '../components/CuentaRegresiva';
 
 import { withTranslation } from '../i18n';
@@ -21,7 +21,7 @@ const Index = ({t}) => {
             <ImagenParallax imagen='/img/HOME/Home_Divisor_3.jpg' nombre={t('Separadores.3')} />
             {/* <Sponsors /> */}
             <CuentaRegresiva />
-            <Inscripcion />
+            {/* <Inscripcion /> */}
             <ImagenParallax imagen='/img/HOME/Home_Divisor_4.jpg' nombre={t('Separadores.4')} />
         </Layout>
     );
