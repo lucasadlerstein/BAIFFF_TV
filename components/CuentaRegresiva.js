@@ -58,7 +58,7 @@ const CuentaRegresiva = () => {
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
           // Render a complete state
-          return <Completionist />;
+          return null;
         } else {
           // Render a countdown
           return (

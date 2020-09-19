@@ -27,12 +27,12 @@ const Jurados = ({t}) => {
                 <JuradoIndividual foto={'/img/MASINFO/JURADOS/Mathew.jpg'} nombre={'MATHEW LIBATIQUE'} rol={t('Juradxs.Roles.Directora')} instagram={'libatique'} />
                 <JuradoIndividual foto={'/img/MASINFO/JURADOS/Diane.jpg'} nombre={'DIANE PERNET'} rol={t('Juradxs.Roles.Directora')} instagram={'asvof'} />
                 <JuradoIndividual foto={'/img/MASINFO/JURADOS/Shelley.jpg'} nombre={'SHELLEY JONES'} rol={t('Juradxs.Roles.Directora')} instagram={'shelleybones'} />
-
-                {/* <JuradoIndividual foto={'/img/MASINFO/JURADOS/Hernan.jpg'} nombre={'HERNAN CORERA'} rol={t('Juradxs.Roles.Directora')} instagram={'hernancorera'} /> */}
-                {/* <JuradoIndividual foto={'/img/MASINFO/JURADOS/Erik.jpg'} nombre={'ERIK MADIGAN HECK'} rol={t('Juradxs.Roles.Directora')} instagram={'erikmadiganheck'} /> */}
+                <JuradoIndividual foto={'/img/MASINFO/JURADOS/Erik.jpg'} nombre={'ERIK MADIGAN HECK'} rol={t('Juradxs.Roles.Directora')} instagram={'erikmadiganheck'} />
+                <JuradoIndividual foto={'/img/MASINFO/JURADOS/Hernan.jpg'} nombre={'HERNAN CORERA'} rol={t('Juradxs.Roles.Directora')} instagram={'hernancorera'} />
+                <JuradoIndividual foto={'/img/MASINFO/JURADOS/PeterM.jpg'} nombre={'PETER MAMCHICH'} rol={t('Juradxs.Roles.Directora')} instagram={'ptr_mchch'} />
             </RowP>
         </Contenedor>
-     );
+    );
 }
  
 export default withTranslation('edicion-digital')(Jurados);

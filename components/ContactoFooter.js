@@ -81,6 +81,7 @@ const ContactoFooter = () => {
             <ContenedorEnlaces>
                 <Enlace href="https://www.facebook.com/baifff/" target="_blank">FB</Enlace>
                 <Enlace href="https://www.instagram.com/baifffoficial/" target="_blank">IG</Enlace>
+                <Enlace href="https://www.youtube.com/channel/UCJE77qi7bGrN_l9nI72NAvg" target="_blank">YT</Enlace>
                 <Enlace href="https://vimeo.com/baifff" target="_blank">Vimeo</Enlace>
             </ContenedorEnlaces>
         </Contenedor>

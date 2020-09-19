@@ -1,0 +1,44 @@
+{
+    "Inscripcion": {
+        "Titulo": "Inscripción",
+        "Form": {
+            "Nombre": "Nombre",
+            "Apellido": "Apellido",
+            "Email": "Email",
+            "Pais": "Pais",
+            "Pago": "Forma de pago",
+            "Fpago": {
+                "MP": "MercadoPago",
+                "US": "Transferencia bancaria U.S.A."
+            },
+            "BtnComprar": "Pagar"
+        },
+        "Errores": {
+            "Nombre": "El nombre es obligatorio",
+            "Apellido": "El apellido es obligatorio",
+            "Email": "El Email es obligatorio",
+            "Pais": "El país es obligatorio",
+            "Pago": "Debés seleccionar una forma de pago"
+        },
+        "Alertas": {
+            "Aprobado": {
+                "SwalTitulo": "EXCELENTE",
+                "SwalDesc": "Tu pago fue aprobado, revisá tu email para más información.",
+                "Reng1": "Gracias por confiar en nosotros.",
+                "Reng2": "Te enviamos más información por email."
+            },
+            "Pendiente": {
+                "SwalTitulo": "¡ATENCIÓN!",
+                "SwalDesc": "Tu pago aún no fue aprobado, revisá tu email para más información.",
+                "Reng1": "Tu pago aún no fue aprobado.",
+                "Reng2": "Para más información revisá tu email."
+            },
+            "Erroneo": {
+                "SwalTitulo": "¡ATENCIÓN!",
+                "SwalDesc": "Tu pago fue rechazado. Volvé a intentarlo o comunicate con nosotros por email.",
+                "Reng1": "Tu pago aún fue rechazado.",
+                "Reng2": "Para más información revisá tu email."
+            }
+        }
+    }
+}

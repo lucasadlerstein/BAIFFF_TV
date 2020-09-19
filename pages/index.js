@@ -20,7 +20,7 @@ const Index = ({t}) => {
             <ElFestival />
             <ImagenParallax imagen='/img/HOME/Home_Divisor_3.jpg' nombre={t('Separadores.3')} />
             {/* <Sponsors /> */}
-            <CuentaRegresiva />
+            {/* <CuentaRegresiva /> */}
             {/* <Inscripcion /> */}
             <ImagenParallax imagen='/img/HOME/Home_Divisor_4.jpg' nombre={t('Separadores.4')} />
         </Layout>

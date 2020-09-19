@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Layout from '../../components/Layout';
 import clienteAxios from '../../config/axios';
 import {useRouter} from 'next/router';
-import {i18n} from '../../i18n';
+import {i18n, withTranslation} from '../../i18n';
 import PortadaSeccion from '../../components/secciones/PortadaSeccion';
 import styled from '@emotion/styled';
-import Boton from '../../components/ui/Boton';
 import CircularProgress from '@material-ui/core/CircularProgress';
+// import InscripcionTaller from '../../components/taller/InscripcionTaller';
 
 // Generar un enlace por cada slug
 export async function getStaticPaths() {
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
         // Aca va un array con los SLUGS
         params: { enlace: enlace.slug_es }
     }))
-    return { paths, fallback: false }
+    return { paths, fallback: true }
 }
 
 export async function getStaticProps({params}) {
@@ -30,8 +30,10 @@ export async function getStaticProps({params}) {
     }
 }
 
-export default ({enlace}) => {
+const TallerName = ({enlace}) => {
     const router = useRouter();
+    const [pagar, setPagar] = useState(false);
+
     if (router.isFallback) {
         return (
             <Layout>
@@ -75,6 +77,36 @@ export default ({enlace}) => {
                 height: 50rem;
             }
         `;    
+            const BotonUI = styled.button`
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
+            font-family: 'MonumentExtended', sans-serif;
+            /* font-weight: 700; */
+            text-decoration: none;
+            background-color: #FF0000;
+            color: #FFFFFF!important;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all .3s ease;
+            @media (min-width: 768px ){
+                margin-right: 0;        
+                padding: 1.5rem 5rem;
+    
+            }
+    
+            &:hover {
+                background-color: #FFFFFF;
+                color: #FF0000!important;
+                border: 2px solid #FF0000;
+            }
+    
+            @media (max-width: 768px){
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+            }
+        `;
             return (
                 <Layout>
                     <PortadaSeccion foto={'/img/ELTALLER/Taller_Header.jpg'} titulo={(i18n.language === 'en' ? enlace.titulo_en : enlace.titulo_es)} />
@@ -83,10 +115,13 @@ export default ({enlace}) => {
                             <p>
                                 {(i18n.language === 'en' ? enlace.descripcion_en : enlace.descripcion_es)}
                             </p>
-                            <Boton color={true} texto={i18n.language === 'en' ? 'Pay with MercadoPago' : 'Pagar con MercadoPago'} />
+                            {/* <BotonUI
+                                onClick={() => setPagar(!pagar)}
+                            >{i18n.language === 'en' ? 'Buy' : 'Comprar'}</BotonUI> */}
                         </IzquierdaTexto>
                         <DerechaImg></DerechaImg>
                     </Contenedor>
+                    {/* <InscripcionTaller taller={enlace} /> */}
                 </Layout>
             )
         } else {
@@ -94,3 +129,5 @@ export default ({enlace}) => {
         }
     }
 }
+
+export default TallerName;

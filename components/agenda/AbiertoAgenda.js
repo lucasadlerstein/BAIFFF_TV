@@ -76,6 +76,10 @@ const BotonDU = styled.h6`
         display: block;
     }
 `;
+const BtnVerEvento = styled.a`
+    color: white;
+`;
+
 
 const AbiertoAgenda = ({info, t}) => {
     const Imagen = styled.div`
@@ -95,9 +99,17 @@ const AbiertoAgenda = ({info, t}) => {
                 <p>{ (i18n.language === 'en') ? info.texto_en : info.texto_es }</p>
                 <Botones>
                     <BotonDU>{info.duracion}</BotonDU>
-                    <Link href={(info.link !== '') ? `taller/${info.link}` : '/live'}>
-                        <BotonYT>{(info.boton_es !== '') ? ((i18n.language === 'en') ? info.boton_en : info.boton_es) : t('Agenda.Ver')}</BotonYT>
-                    </Link>
+                    {
+                        (info.link === '') ? (
+                            <Link href="/live">
+                                <BotonYT>{t('Agenda.Ver')}</BotonYT>
+                            </Link>
+                        ) : (
+                            <BtnVerEvento target="_blank" href={info.link}>
+                                <BotonYT>{(i18n.language === 'en') ? info.boton_en : info.boton_es}</BotonYT>
+                            </BtnVerEvento>
+                        )
+                    }
                 </Botones>
             </ContenidoIzquierda>
             <Imagen></Imagen>

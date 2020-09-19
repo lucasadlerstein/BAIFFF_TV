@@ -36,6 +36,9 @@ const Staff = ({t}) => {
                     <StaffIndividual nombre={'Adrián Tosta'} rol={t('Staff.Logo')} />
                     <StaffIndividual nombre={'Remo Albornoz'} rol={t('Staff.ContenidoRRSS')} />
                     <StaffIndividual nombre={'Walter Williams'} rol={t('Staff.ContenidoRRSS')} />
+                    <StaffIndividual nombre={'Ariel Lee'} rol={t('Staff.AsistenteProd')} />
+                    <StaffIndividual nombre={'Ezequiel Dagnino'} rol={t('Staff.PostContenidos')} />
+                    <StaffIndividual nombre={'Manuel Peña'} rol={t('Staff.PostContenidos')} />
                     <Col sm={12} md={6} lg={4} className="justDesktop">
                     </Col>
                     <StaffIndividual nombre={'Infinidad'} rol={t('Staff.DesarrolloWeb')} />

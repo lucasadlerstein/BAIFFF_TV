@@ -65,6 +65,13 @@ const Navegacion = ({t}) => {
     const toggle = () => setIsOpen(!isOpen);
     const mouseNav = (estado) => { setIsOpenHover(estado); }
 
+    let vivoActivo = false; 
+    const hoy = Date();
+    const desde = new Date(2020, 8, 13);
+    const hasta = new Date(2020, 8, 16);
+
+    (desde > hoy && hasta < hoy) ? vivoActivo = true: vivoActivo = false;
+
     return (
         <>
             <div className={styles.bgblack} id="navegacionCompleta">
@@ -112,13 +119,17 @@ const Navegacion = ({t}) => {
                                 </DropdownMenuP>
                             </UncontrolledDropdown>
                         </Nav>
-                            {/* <Link href="/live">
-                                <a className={styles.botonlive}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
-                                    <title>Live Icon BAIFFF</title><g id="Layer_2" data-name="Layer 2"><g id="BACKGROUND"><circle className="cls-1" cx="31.5" cy="31.5" r="25"/><path className="cls-1" d="M31.5,63A31.5,31.5,0,1,1,63,31.5,31.53,31.53,0,0,1,31.5,63Zm0-60A28.5,28.5,0,1,0,60,31.5,28.54,28.54,0,0,0,31.5,3Z"/></g></g></svg>
-                                    Live
-                                </a>
-                            </Link> */}
+                            {
+                                vivoActivo === true ? (
+                                <Link href="/live">
+                                    <a className={styles.botonlive}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63">
+                                        <title>Live Icon BAIFFF</title><g id="Layer_2" data-name="Layer 2"><g id="BACKGROUND"><circle className="cls-1" cx="31.5" cy="31.5" r="25"/><path className="cls-1" d="M31.5,63A31.5,31.5,0,1,1,63,31.5,31.53,31.53,0,0,1,31.5,63Zm0-60A28.5,28.5,0,1,0,60,31.5,28.54,28.54,0,0,0,31.5,3Z"/></g></g></svg>
+                                        Live
+                                    </a>
+                                </Link>
+                                ) : null
+                            }
                             
                         </Collapse>
                         <button

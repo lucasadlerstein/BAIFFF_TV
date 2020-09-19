@@ -1,0 +1,38 @@
+{
+    "Inscripcion": {
+        "Titulo": "Registration",
+        "Form": {
+            "Nombre": "Name",
+            "Apellido": "Surname",
+            "Email": "Email",
+            "Pais": "Country",
+            "Pago": "Payment method",
+            "Fpago": {
+                "MP": "MercadoPago (Argentina)",
+                "US": "Wire Transfer U.S.A. Account"
+            },
+            "BtnComprar": "Pay"
+        },
+        "Errores": {
+            "Nombre": "Name is required",
+            "Apellido": "Surname is required",
+            "Email": "Email is required",
+            "Pais": "Country is required",
+            "Pago": "You must choose a payment method"
+        },
+        "Alertas": {
+            "Aprobado": {
+                "SwalTitulo": "CONGRATS",
+                "SwalDesc": "Your payment has been approved. Check your Email for more information",
+                "Reng1": "Gracias por confiar en nosotros.",
+                "Reng2": "Te enviamos más información por email."
+            },
+            "Pendiente": {
+                "SwalTitulo": "¡ATENCIÓN!",
+                "SwalDesc": "Tu pago aún no fue aprobado, revisá tu email para más información.",
+                "Reng1": "Tu pago aún no fue aprobado.",
+                "Reng2": "Para más información revisá tu email."
+            }
+        }
+    }
+}
