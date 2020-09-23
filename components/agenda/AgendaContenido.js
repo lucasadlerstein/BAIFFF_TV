@@ -21,6 +21,9 @@ const Titulo = styled.h4`
             margin-bottom: .5rem;
         }
     }
+    @media (max-width: 540px){
+        font-size: 1.9rem;
+    }
 
     span {
         color: #ff0000;
