@@ -4,7 +4,7 @@ import VideoPortada from '../components/VideoPortada';
 import ImagenParallax from '../components/ImagenParallax';
 import SeccionNosotros from '../components/SeccionNosotros';
 import ElFestival from '../components/ElFestival';
-// import Sponsors from '../components/Sponsors';
+import Sponsors from '../components/Sponsors';
 // import Inscripcion from '../components/Inscripcion';
 import CuentaRegresiva from '../components/CuentaRegresiva';
 
