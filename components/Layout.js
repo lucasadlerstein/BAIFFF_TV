@@ -14,6 +14,8 @@ const Layout = ({children, t}) => {
                 <meta name="description" content={t('Head.Description')} />
                 <meta name="keywords" content={t('Head.Keywords')} />
                 <meta name="robots" content="index, follow" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="google" content="notranslate" />
             </Head>
             <div>
                 <Navegacion />

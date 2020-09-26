@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import {withTranslation} from '../i18n';
 
 const DescargaCatalogo = styled.div`
-    padding: 7rem 0 0 0;
+    padding: 4rem 0 0 0;
     text-align: center;
     a {
         font-family: 'MonumentExtended';
@@ -17,6 +17,9 @@ const DescargaCatalogo = styled.div`
         font-size: 2rem;
         color: #000000;
         text-decoration: none;
+    }
+    @media (min-width: 768px){
+        padding: 7rem 0 0 0;
     }
 `;
 
